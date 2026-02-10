@@ -1,0 +1,22 @@
+
+> web@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.0s
+  Running TypeScript ...
+Failed to compile.
+
+./app/contact/page.tsx:99:38
+Type error: Cannot find name 'CheckCircle'.
+
+[0m [90m  97 |[39m                             [33m<[39m[33mdiv[39m className[33m=[39m[32m"h-full flex flex-col items-center justify-center text-center py-12"[39m[33m>[39m
+ [90m  98 |[39m                                 [33m<[39m[33mdiv[39m className[33m=[39m[32m"w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6"[39m[33m>[39m
+[31m[1m>[22m[39m[90m  99 |[39m                                     [33m<[39m[33mCheckCircle[39m size[33m=[39m{[35m40[39m} [33m/[39m[33m>[39m
+ [90m     |[39m                                      [31m[1m^[22m[39m
+ [90m 100 |[39m                                 [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 101 |[39m                                 [33m<[39m[33mh3[39m className[33m=[39m[32m"text-2xl font-bold text-primary mb-2"[39m[33m>[39m[33mMessage[39m [33mSent[39m[33m![39m[33m<[39m[33m/[39m[33mh3[39m[33m>[39m
+ [90m 102 |[39m                                 [33m<[39m[33mp[39m className[33m=[39m[32m"text-gray-600"[39m[33m>[39m[33mWe[39m[32m'll get back to you shortly.</p>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
