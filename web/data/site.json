@@ -13,49 +13,293 @@
     }
   },
   "navigation": [
-    { "label": "Home", "path": "/" },
-    { "label": "About", "path": "/about" },
-    { "label": "Services", "path": "/services" },
-    { "label": "Portfolio", "path": "/portfolio" },
-    { "label": "Blog", "path": "/blog" },
-    { "label": "Contact", "path": "/contact" }
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "About",
+      "path": "/about"
+    },
+    {
+      "label": "Services",
+      "path": "/services"
+    },
+    {
+      "label": "Portfolio",
+      "path": "/portfolio"
+    },
+    {
+      "label": "Blog",
+      "path": "/blog"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact"
+    }
   ],
   "pages": {
     "home": {
       "hero": {
         "tagline": "Ignite Your Digital Future with Intelligent Web & AI Solutions",
         "subtext": "Cape Town's premier agency for custom web development, AI integrations, and scalable apps.",
-        "cta_primary": { "text": "Get Free Consultation", "link": "/contact" },
-        "cta_secondary": { "text": "View Portfolio", "link": "/portfolio" }
+        "cta_primary": {
+          "text": "Get Free Consultation",
+          "link": "/contact"
+        },
+        "cta_secondary": {
+          "text": "View Portfolio",
+          "link": "/portfolio"
+        }
       },
       "services_overview": [
-        { "title": "Web Development", "description": "Responsive sites & custom apps.", "icon": "code" },
-        { "title": "AI Solutions", "description": "Chatbots, NLP & Automation.", "icon": "cpu" },
-        { "title": "Mobile Apps", "description": "iOS & Android solutions.", "icon": "smartphone" },
-        { "title": "Digital Marketing", "description": "SEO & AI-driven visibility.", "icon": "trending-up" }
+        {
+          "title": "Web Development",
+          "description": "Responsive sites & custom apps.",
+          "icon": "code"
+        },
+        {
+          "title": "AI Solutions",
+          "description": "Chatbots, NLP & Automation.",
+          "icon": "cpu"
+        },
+        {
+          "title": "Mobile Apps",
+          "description": "iOS & Android solutions.",
+          "icon": "smartphone"
+        },
+        {
+          "title": "Digital Marketing",
+          "description": "SEO & AI-driven visibility.",
+          "icon": "trending-up"
+        }
       ],
       "stats": [
-        { "label": "Years Experience", "value": "10+" },
-        { "label": "Projects Delivered", "value": "50+" },
-        { "label": "Efficiency Boost", "value": "AI-Enhanced" }
+        {
+          "label": "Years Experience",
+          "value": "10+"
+        },
+        {
+          "label": "Projects Delivered",
+          "value": "50+"
+        },
+        {
+          "label": "Efficiency Boost",
+          "value": "AI-Enhanced"
+        }
       ],
       "testimonials": [
-        { "quote": "Ignis transformed our site with AI chatbots!", "author": "Local Startup CEO", "rating": 5 }
+        {
+          "quote": "Ignis transformed our site with AI chatbots!",
+          "author": "Local Startup CEO",
+          "rating": 5
+        }
       ]
     },
     "about": {
       "story": "Founded in Cape Town, we blend fiery innovation with intellectual AI expertise...",
-      "values": ["Innovation", "Client-Focus", "Scalability", "Ethical AI"],
+      "values": [
+        "Innovation",
+        "Client-Focus",
+        "Scalability",
+        "Ethical AI"
+      ],
       "team": [
-        { "name": "Enrique Austin", "role": "Founder & AI Lead", "image": "placeholder-enrique.jpg" }
+        {
+          "name": "Enrique Austin",
+          "role": "Founder & AI Lead",
+          "image": "placeholder-enrique.jpg"
+        }
       ]
     },
     "services": {
       "list": [
-        { "title": "Web Development", "details": ["Responsive Sites", "eCommerce", "Custom Apps"] },
-        { "title": "AI Solutions", "details": ["Chatbots", "ML Models", "Automation"] },
-        { "title": "Mobile Apps", "details": ["iOS", "Android", "Cross-Platform"] },
-        { "title": "SEO & Marketing", "details": ["SEO", "PPC", "Social Media"] }
+        {
+          "title": "Web Development",
+          "details": [
+            "Responsive Sites",
+            "eCommerce",
+            "Custom Apps"
+          ]
+        },
+        {
+          "title": "AI Solutions",
+          "details": [
+            "Chatbots",
+            "ML Models",
+            "Automation"
+          ]
+        },
+        {
+          "title": "Mobile Apps",
+          "details": [
+            "iOS",
+            "Android",
+            "Cross-Platform"
+          ]
+        },
+        {
+          "title": "SEO & Marketing",
+          "details": [
+            "SEO",
+            "PPC",
+            "Social Media"
+          ]
+        }
+      ]
+    },
+    "portfolio": {
+      "categories": [
+        "All",
+        "Web Development",
+        "AI Solutions",
+        "Mobile Apps"
+      ],
+      "projects": [
+        {
+          "id": "nexus-core",
+          "title": "Nexus Core Analytics",
+          "category": "AI Solutions",
+          "tags": [
+            "AI + Fintech"
+          ],
+          "description": "High-performance data visualization and predictive modeling for financial markets. Real-time processing of millions of data points.",
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuArRfiQM9RotT_ABHc0Jm7j71qutvhuTdhgJM34WaRUh2mrm8X02b8EPEgCrj6t2faljrbqrnhUSBYDkKG7A6qWJcAS6Fk5SeCs9GKjUv0MOpDzBYRGK8P44Ts8VP8ErvymnhhIwd2Kz9q5-2EmiX6TIc2IsQSbYrszt9CuNY3HV3Q58a2Uxh6YnhuxOykxDhHppENuir6bm1M2PMzx-0y1Z6PqS9gp0Yh2sKW__eBzgP4nF5YOW85EkaR4FPH7cCDrrVI5io1DM5BR",
+          "tech": [
+            {
+              "name": "React",
+              "icon": "code"
+            },
+            {
+              "name": "Python",
+              "icon": "database"
+            },
+            {
+              "name": "AWS",
+              "icon": "cloud"
+            }
+          ]
+        },
+        {
+          "id": "vantage-market",
+          "title": "Vantage Market UI",
+          "category": "Web Development",
+          "tags": [
+            "E-commerce + Web"
+          ],
+          "description": "A lightning-fast shopping experience with seamless checkout and dynamic inventory systems. Optimized for 99.9% uptime.",
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC6IHyrqWOVPIQggtr7QiML7H7rE4CCD_Hd3IXsFVtmnBIwVxmqYr5cOrEfiIAnOqrt4wwL-fbhW44PpCg4a2y-yF7HJ-DInqbP6OootG-DVdbTdO-LubYIw90pPDBurr91cHJn-rTTEkPqu1dzIjcdMM0VFR9u7jvgV4nwpE6HI1bk-xCXgCK257wc_cg0ZdD9iUiitC2sCUSauH5lKQSvmNciHDdyznE7nedzKn5jOC28P_ceWTjy7fIxdDu3neB3NF3zSmchpGM4",
+          "tech": [
+            {
+              "name": "Next.js",
+              "icon": "javascript"
+            },
+            {
+              "name": "Stripe",
+              "icon": "payments"
+            },
+            {
+              "name": "Node.js",
+              "icon": "settings_ethernet"
+            }
+          ]
+        },
+        {
+          "id": "ignis-guard",
+          "title": "Ignis Guard Security",
+          "category": "AI Solutions",
+          "tags": [
+            "SaaS + Automation"
+          ],
+          "description": "Enterprise-level threat detection system utilizing automated response protocols and real-time monitoring.",
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAglxVHatevcOwJGm1SONqd1jcMt5fnMtmgWPswFbb-0iF0glQ8A6UazEiFoa6Z6iqjwNR3zILOmyPdZbm3WwhmyCU2VlWA5S8b_-aXZjohy44OH54fvXEXX6QdNafKiDYo3b3oi4nqDLo_8sbjlLAvyIhcvUadIwmVtXpccElcaiDOzSGtyq_sr73KCaD2w23j-pqix7zI0jAwGM9cIW2HJ7RqM2SbbwhG-XyTXw43y2UmBlyt8B28wcOjmJGjvs_vRqMm4dZaylmP",
+          "tech": [
+            {
+              "name": "Kubernetes",
+              "icon": "hub"
+            },
+            {
+              "name": "Security",
+              "icon": "security"
+            },
+            {
+              "name": "GoLang",
+              "icon": "terminal"
+            }
+          ]
+        },
+        {
+          "id": "pulse-health",
+          "title": "Pulse Health App",
+          "category": "Mobile Apps",
+          "tags": [
+            "Mobile + AI"
+          ],
+          "description": "AI-driven personal wellness assistant that analyzes biometrics to provide personalized health insights and coaching.",
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtnzdUVZ_Xj6Q2vHxvyJviA7vJzX6CWOl6WoOlaluRJhSd2l4FR8b1rJDVBhAS9f13L7kG5I8YwVmmqMIJqJ0tirMMOwS1vNY4PEF6F7bd5VnHtY6gVqj4Y6GFmIjF3shwqYGv7khCyBCa_TXJIzY3IaygjuwddZyyqD1bLizSAbcz-e9g6QZD6AbYt4WRZuYRSk7GNm8gzDojJzT3Kll8HXmNbUuo0F-aPJu0VOYuTGcIMM7fiID_OmUWOJRiFjU4acynBDig65GN",
+          "tech": [
+            {
+              "name": "Mobile",
+              "icon": "phone_iphone"
+            },
+            {
+              "name": "AI",
+              "icon": "psychology"
+            },
+            {
+              "name": "Metrics",
+              "icon": "monitoring"
+            }
+          ]
+        },
+        {
+          "id": "solaris-energy",
+          "title": "Solaris Energy Portal",
+          "category": "Web Development",
+          "tags": [
+            "Enterprise Web"
+          ],
+          "description": "A comprehensive management portal for renewable energy providers, tracking performance across multiple power grids.",
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAG6sqU-FgXijK4zVUOnif0L66AaypI51yXkD8O-ErOKh2Hyi_ag4wq3N26mAqHO53z91VEy6K2hyKe-_8p4uPH3cOxpR8NcDFfD2HmPtHskzmsevkX1RRy6js_ZS2kQ-7by9CgHBki6xd0MgtXouHUE94GjLV6wLhJTo4CderzxMIU-DWIEul6HGIs6fm5lebIkqstXWq_TgrKQDYgBDuEHXbWYGMJKy_Z8q86W_Sjig6QnoiK3earGqULseBHRYjF4RWUjVjz1dpX",
+          "tech": [
+            {
+              "name": "Enterprise",
+              "icon": "domain"
+            },
+            {
+              "name": "Solar",
+              "icon": "solar_power"
+            },
+            {
+              "name": "Data",
+              "icon": "grid_view"
+            }
+          ]
+        },
+        {
+          "id": "aura-fashion",
+          "title": "Aura Fashion AR",
+          "category": "Mobile Apps",
+          "tags": [
+            "Mobile + Retail"
+          ],
+          "description": "Innovative retail application featuring virtual try-on technology and personalized style recommendations using computer vision.",
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDgQlkYmpVVVm-fCXDIymaP4DoyW_IteqaGiUftvjdayHimDEJSup2eU0VLX_d4OJTFJoq8mBEq1SgDu-LujzesnaTwmydwmHQPFoz9Ne70HgtfT5EqdoH8PlRfOlJ8JMmNM5-6Zyhwsra0keOMwItwX7BMHL0hp2IT1n3sOr0xsJuR4luVFS3PRpzeDI0mtNhjsQZ7pnA3M82jTglZC7DOkBAl5Voe3VeWEnxQcO2w2i6pPSUKya68VQlQQIf0fiopyu28I9wClcXk",
+          "tech": [
+            {
+              "name": "AR",
+              "icon": "view_in_ar"
+            },
+            {
+              "name": "Retail",
+              "icon": "checkroom"
+            },
+            {
+              "name": "Vision",
+              "icon": "camera"
+            }
+          ]
+        }
       ]
     },
     "contact": {
