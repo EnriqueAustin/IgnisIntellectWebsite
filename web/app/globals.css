@@ -1,25 +1,80 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #001F3F;
-  --color-accent: #FF4500;
-  --color-secondary: #F5F5F5;
-  --color-background: #FFFFFF;
-  --color-foreground: #333333;
+@plugin "tailwindcss-animate";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #001f3d;
+  --color-accent: #FF4500;
+  --color-accent-orange: #ff6b00;
+  --color-accent-fire: #ff4d00;
+  --color-background-light: #f5f7f8;
+  --color-background-dark: #0f1923;
+
+  --font-display: Inter, sans-serif;
   --font-sans: var(--font-inter), sans-serif;
   --font-heading: var(--font-poppins), sans-serif;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+/* Custom Utility Classes */
+.orange-gradient {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff4d00 100%);
+}
+
+.navy-glass {
+  background: rgba(15, 25, 35, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-glow {
+  background: radial-gradient(circle at center, rgba(255, 107, 0, 0.15) 0%, transparent 70%);
+}
+
+.fiery-gradient {
+  background: linear-gradient(135deg, #001f3d 0%, #001122 100%);
+}
+
+.orange-glow:hover {
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+  border-color: #ff6b00;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.2);
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 @layer base {
+  body {
+    @apply font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased;
+  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-bold text-primary;
+  ::selection {
+    @apply bg-accent-orange text-white;
   }
 }
 
@@ -29,14 +84,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #0f1923;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #001F3F;
+  background: #001f3d;
   border-radius: 5px;
+  border: 1px solid #333;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF4500;
+  background: #ff6b00;
 }

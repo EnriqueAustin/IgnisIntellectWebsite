@@ -1,89 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
-interface HeroProps {
-    tagline: string;
-    subtext: string;
-    ctaPrimary: { text: string; link: string };
-    ctaSecondary: { text: string; link: string };
-}
-
-export default function Hero({ tagline, subtext, ctaPrimary, ctaSecondary }: HeroProps) {
+export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary pt-20">
-            {/* Abstract Background */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-accent/30 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[100px]" />
+        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background-dark">
+            {/* Background Graphic */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent z-10" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    alt="Abstract AI visualization with fiery energy pulses"
+                    className="w-full h-full object-cover opacity-40"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCddICVxHCGMcYPbBhhj0zTaNJg7kcrsB7ftP3gxXSR3EQ1TTsm2QGndMPNb4RAzG7DhZW-0akSeut1T4zwzirx-NeD4CHaIheJFzwjX2mMl2wgmrNlmgWyrVJhlvj_qpUPTSfx-xMcZySxw6yW80v62_4ayzUmg6zX4N_5KpaCtOhKgnnGck30xrTz2is8ry57U82HsUkyPt3bDOMAXOczoSx16x97XKg4tOh08iT6hEBQYyzbOewqE4fT2rS7TiHEGtC-KiYsVBhz"
+                />
+                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background-dark to-transparent z-10" />
+                <div className="hero-glow absolute inset-0" />
             </div>
 
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-
-            <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="max-w-4xl mx-auto"
+                    className="max-w-3xl"
                 >
                     {/* Badge */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium mb-8"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/10 border border-accent-orange/20 mb-6"
                     >
-                        <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                        Next-Gen AI & Web Solutions
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-orange opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-orange" />
+                        </span>
+                        <span className="text-accent-orange text-xs font-bold uppercase tracking-widest">Now Serving Cape Town</span>
                     </motion.div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold font-heading text-white leading-tight mb-6">
-                        {tagline.split(" ").map((word, i) => (
-                            <span key={i} className={word.includes("Ignite") || word.includes("Intelligent") ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500" : ""}>
-                                {word}{" "}
-                            </span>
-                        ))}
+                    <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6">
+                        Ignite Your Digital Future with{" "}
+                        <span className="text-accent-orange">Intelligent</span>{" "}
+                        Web &amp; AI Solutions.
                     </h1>
 
-                    <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        {subtext}
+                    <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+                        Cape Town&apos;s premier agency for custom web development, AI integrations, and scalable apps that drive measurable growth.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
                         <Link
-                            href={ctaPrimary.link}
-                            className="px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-orange-500/25 flex items-center gap-2 group"
+                            href="/contact"
+                            className="orange-gradient text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_30px_-5px_#ff6b00] transition-all flex items-center justify-center gap-2"
                         >
-                            {ctaPrimary.text}
-                            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                            Get Free Consultation
+                            <span className="material-symbols-outlined">trending_flat</span>
                         </Link>
-
                         <Link
-                            href={ctaSecondary.link}
-                            className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/10 flex items-center gap-2"
+                            href="/portfolio"
+                            className="bg-transparent border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center"
                         >
-                            {ctaSecondary.text}
-                            <ChevronRight size={20} />
+                            View Portfolio
                         </Link>
                     </div>
                 </motion.div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce"
-            >
-                <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center p-1">
-                    <div className="w-1 h-2 bg-current rounded-full" />
-                </div>
-            </motion.div>
         </section>
     );
 }

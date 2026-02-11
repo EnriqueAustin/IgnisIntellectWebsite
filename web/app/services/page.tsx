@@ -1,82 +1,375 @@
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import siteData from "@/data/site.json";
-import { Code, Cpu, Smartphone, TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Services - Ignis Intellect",
+    description:
+        "Bridging the gap between imagination and technical execution with high-performance digital products that scale.",
+};
+
+const services = [
+    {
+        icon: "code",
+        label: "Architecture",
+        title: "High-Performance Web Development",
+        description:
+            "We build more than just websites. We engineer high-performance responsive experiences using Next.js, Headless CMS architectures, and optimized web applications built for extreme speed and SEO.",
+        features: [
+            "Next.js 14 Expertise",
+            "Headless CMS (Strapi/Sanity)",
+            "Progressive Web Apps",
+            "E-commerce (Shopify/Next)",
+        ],
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzYAeh-6qNNBzrovpWVIf6bzgtCAwthcIZiGYaT9-a2ynwt7Nf__RFDsZq6Wi5S-jFZ90KnG3RDx5S6tjQx7OzVxaz3Ca5_psa6aO8l56Lv5NSwde7Tj5WMYv0kUdSi0tf87Ghkg13SPTIVO1788Hp3aE9hOwtu76JyJLhfc2PREDzJo6TNFEvIQe7fIbzvMMzdDceqF41NP-XWp2cxQRGfGtwzllE4quQ_HQCk0MUh5UehUQJo_TCr2dP9w7bq2Axx7b6vnbEiM9J",
+        imageAlt: "Modern code editor and minimalist workspace",
+        type: "features" as const,
+    },
+    {
+        icon: "psychology",
+        label: "Intelligence",
+        title: "Advanced AI & Machine Learning",
+        description:
+            "Inject intelligence into your workflow. From custom LLM fine-tuning to automated computer vision, we provide end-to-end AI implementation that delivers measurable ROI.",
+        features: [
+            "Custom Chatbots",
+            "ML Model Training",
+            "NLP Processing",
+            "Predictive Analytics",
+        ],
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDZym24CoFc3sXj2s3e9a8CMpE2KU27-XDd44dUn52MdsB3uATzlafk72q57SNDXyntPWbkLDhDxj1B4rB8PdS8Di3xkGe-fiiyeSbq0JEheYxRY5XpPHO8APBVN9vAJj_k_xxYjXPsjiakn7dfm9hF-dAy8OQ--CG094lerPQMSPKhDB22rruUhLibvomxiRE0U-54p8rAWO-ROTuedWloSaY0CbVmM6haxRPmL9Ztwfbvr5B_NTiXosHycu0P2eMpIR1qMnQ5_TsZ",
+        imageAlt: "Abstract glowing blue and orange neural network",
+        type: "features" as const,
+    },
+    {
+        icon: "smartphone",
+        label: "Mobility",
+        title: "Seamless Mobile Ecosystems",
+        description:
+            "Native performance with cross-platform efficiency. We specialize in React Native and Flutter to deliver world-class apps for iOS and Android simultaneously.",
+        techs: [
+            { code: "RN", name: "React Native" },
+            { code: "FL", name: "Flutter" },
+            { code: "iOS", name: "Native Swift" },
+        ],
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBr32QYAwBubuReorQIAliVL3TbZt1EmFI0XpNQeXdhdIE3rseT4aqwVUIOr3IIiOVYfcvsTAwdczjhmdC6aoKIntr4wAQIFHK_z7qBpGdU92Vvnq1ltFqPdcpv4Ls4TXqdq_tUwL1pNfpTVWMTNgSWkjLL_EvKWuuEtSRiNbGdcsiFpGn_HulJYUNubHW8IDNLNuLnwJz5ENUlOIJy7GixNra-tFpsNj0JHLrzRD7291_-slBsIuOLI-0xLA0u_OdxhQ3CMnWsXLNf",
+        imageAlt: "Sleek smartphone display with modern application UI",
+        type: "techs" as const,
+    },
+    {
+        icon: "trending_up",
+        label: "Growth",
+        title: "AI-Powered Search & Marketing",
+        description:
+            "Dominate search results with AI-optimized content strategy and technical SEO. We leverage data tracking to ensure every marketing dollar translates to growth.",
+        insights: [
+            { icon: "query_stats", text: "Deep Data Insights & GA4 Integration" },
+            { icon: "auto_fix_high", text: "AI-Content Strategy" },
+        ],
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBsGFdrKbZA4eqfpF1kjMwLXlSyL5Mj8XbAX5_xj2MFN_nZ-5OlTEQmHvRpZX06JgxwcNdFrtRQFycEMAY5ANHTZLP3aFr7GLmP3nuJLK3gF4p3WimyUsBcaebb4VK7uGj_DrsX5hyqqPTW8C7SuQa9Psknm22-_cwqhs8bTwmZ11JeQkOda3cUGA50Pw6Q6BvNun4pr3fDuKtQ3kLDjPw-LKbWt8SVCb0SCWCHdC7pUu3WdCusYC-0em9jUCeIeYEC73CfFv2v0TTE",
+        imageAlt: "Digital marketing analytics and growth charts",
+        type: "insights" as const,
+    },
+];
+
+function ServiceImage({ src, alt }: { src: string; alt: string }) {
+    return (
+        <div className="rounded-xl overflow-hidden shadow-2xl bg-primary border border-white/5 relative group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
+                alt={alt}
+                src={src}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+        </div>
+    );
+}
 
 export default function Services() {
-    const { services } = siteData.pages;
-
-    const getIcon = (title: string) => {
-        if (title.includes("Web")) return Code;
-        if (title.includes("AI")) return Cpu;
-        if (title.includes("Mobile")) return Smartphone;
-        return TrendingUp;
-    };
-
     return (
-        <main className="min-h-screen bg-background text-foreground">
+        <div className="flex flex-col min-h-screen">
             <Navbar />
+            <main className="flex-grow">
+                {/* Hero Section */}
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary px-4 pt-20">
+                    <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+                        <div className="absolute top-0 -left-1/4 w-[500px] h-[500px] bg-accent-orange/20 rounded-full blur-[120px]" />
+                        <div className="absolute bottom-0 -right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]" />
+                    </div>
+                    <div className="relative z-10 max-w-4xl text-center">
+                        <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
+                            Our Services –{" "}
+                            <span className="text-accent-orange text-glow">
+                                Tailored Web &amp; AI Solutions
+                            </span>
+                        </h1>
+                        <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                            Bridging the gap between imagination and technical execution with
+                            high-performance digital products that scale.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link
+                                href="/contact"
+                                className="w-full sm:w-auto px-8 py-4 orange-gradient text-white font-bold rounded-lg transition-all hover:scale-105 glow-orange text-center"
+                            >
+                                Start Your Project
+                            </Link>
+                            <Link
+                                href="/portfolio"
+                                className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-lg hover:bg-white/10 transition-all text-center"
+                            >
+                                View Case Studies
+                            </Link>
+                        </div>
+                    </div>
+                </section>
 
-            {/* Header */}
-            <section className="pt-32 pb-16 px-6 bg-primary text-white text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Our Services</h1>
-                <p className="text-xl text-gray-300 max-w-2xl mx-auto relative z-10">
-                    Comprehensive digital solutions tailored to your unique needs.
-                </p>
-            </section>
+                {/* Detailed Services Breakdown */}
+                <section className="py-24 px-6 md:px-10">
+                    <div className="max-w-7xl mx-auto space-y-32">
+                        {services.map((service, index) => {
+                            const isEven = index % 2 === 1;
 
-            {/* Services List */}
-            <section className="py-20 px-6 container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {services.list.map((service, idx) => {
-                        const Icon = getIcon(service.title);
-                        return (
-                            <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
-                                <div className="flex items-start justify-between mb-6">
-                                    <div className="w-16 h-16 bg-accent/10 text-accent rounded-xl flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-colors">
-                                        <Icon size={32} />
+                            return (
+                                <div
+                                    key={index}
+                                    className="grid md:grid-cols-2 gap-16 items-center"
+                                >
+                                    {/* Text Content */}
+                                    <div
+                                        className={
+                                            isEven ? "order-2 md:order-2" : "order-2 md:order-1"
+                                        }
+                                    >
+                                        <div className="flex items-center gap-3 text-accent-orange mb-4">
+                                            <span className="material-symbols-outlined text-4xl">
+                                                {service.icon}
+                                            </span>
+                                            <h3 className="text-sm font-bold tracking-[0.2em] uppercase">
+                                                {service.label}
+                                            </h3>
+                                        </div>
+                                        <h2 className="text-white text-4xl font-extrabold mb-6">
+                                            {service.title}
+                                        </h2>
+                                        <p className="text-white/70 text-lg mb-8 leading-relaxed">
+                                            {service.description}
+                                        </p>
+
+                                        {/* Feature list */}
+                                        {service.type === "features" && service.features && (
+                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                {service.features.map((feat, i) => (
+                                                    <li
+                                                        key={i}
+                                                        className="flex items-center gap-2 text-white/90 font-medium"
+                                                    >
+                                                        <span className="material-symbols-outlined text-accent-orange">
+                                                            check_circle
+                                                        </span>
+                                                        {feat}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+
+                                        {/* Tech badges */}
+                                        {service.type === "techs" && service.techs && (
+                                            <div className="grid grid-cols-3 gap-4">
+                                                {service.techs.map((tech, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="bg-white/5 p-4 rounded-lg border border-white/10 text-center"
+                                                    >
+                                                        <p className="text-accent-orange font-bold text-xl">
+                                                            {tech.code}
+                                                        </p>
+                                                        <p className="text-xs text-white/50 uppercase">
+                                                            {tech.name}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {/* Insight rows */}
+                                        {service.type === "insights" && service.insights && (
+                                            <div className="space-y-4">
+                                                {service.insights.map((item, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="flex items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/10"
+                                                    >
+                                                        <span className="material-symbols-outlined text-accent-orange">
+                                                            {item.icon}
+                                                        </span>
+                                                        <span className="text-white/90">
+                                                            {item.text}
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
-                                    <span className="text-9xl font-bold text-gray-50 opacity-5 absolute top-4 right-4 -z-10 pointer-events-none select-none">
-                                        0{idx + 1}
-                                    </span>
+
+                                    {/* Image */}
+                                    <div
+                                        className={
+                                            isEven ? "order-1 md:order-1" : "order-1 md:order-2"
+                                        }
+                                    >
+                                        <ServiceImage
+                                            src={service.image}
+                                            alt={service.imageAlt}
+                                        />
+                                    </div>
                                 </div>
+                            );
+                        })}
+                    </div>
+                </section>
 
-                                <h3 className="text-2xl font-bold text-primary mb-4">{service.title}</h3>
+                {/* Pricing Teaser */}
+                <section className="py-12 px-6 md:px-10 bg-primary/40 border-y border-white/5">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div className="text-center md:text-left">
+                            <p className="text-accent-orange text-lg font-bold">
+                                Transparent Pricing
+                            </p>
+                            <h3 className="text-white text-2xl font-bold">
+                                Packages from R10,000. Custom quotes tailored to your project.
+                            </h3>
+                        </div>
+                        <Link
+                            href="/contact"
+                            className="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-lg font-bold transition-all border border-white/20 whitespace-nowrap"
+                        >
+                            Request Rate Card
+                        </Link>
+                    </div>
+                </section>
 
-                                <ul className="space-y-3 mb-8">
-                                    {service.details.map((detail, dIdx) => (
-                                        <li key={dIdx} className="flex items-center gap-3 text-gray-600">
-                                            <CheckCircle size={18} className="text-green-500 flex-shrink-0" />
-                                            <span>{detail}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                {/* CTA Section */}
+                <section className="py-24 px-6 md:px-10 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent-orange/20 z-0" />
+                    <div className="relative z-10 max-w-4xl mx-auto text-center">
+                        <h2 className="text-white text-4xl md:text-5xl font-black mb-6">
+                            Ready to innovate? Let&apos;s build something extraordinary
+                            together.
+                        </h2>
+                        <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+                            Join dozens of forward-thinking businesses leveraging Ignis
+                            Intellect&apos;s technical excellence to dominate their market.
+                        </p>
+                        <Link
+                            href="/contact"
+                            className="inline-block px-10 py-5 orange-gradient text-white font-black text-xl rounded-xl transition-all hover:scale-105 glow-orange shadow-2xl"
+                        >
+                            Start Your Project
+                        </Link>
+                    </div>
+                </section>
+            </main>
 
-                                <Link href="/contact" className="inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all">
-                                    Get Started <ArrowRight size={18} />
-                                </Link>
+            {/* Footer */}
+            <footer className="bg-primary pt-20 pb-10 px-6 md:px-10 border-t border-white/10">
+                <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+                    <div className="col-span-1 md:col-span-2">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="text-accent-orange">
+                                <span className="material-symbols-outlined">
+                                    local_fire_department
+                                </span>
                             </div>
-                        );
-                    })}
+                            <h2 className="text-white text-lg font-black uppercase tracking-widest">
+                                Ignis Intellect
+                            </h2>
+                        </div>
+                        <p className="text-white/50 max-w-sm mb-6 leading-relaxed">
+                            Premium digital workshop crafting high-performance websites and
+                            intelligent AI solutions for the modern era.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 className="text-white font-bold mb-6">Quick Links</h4>
+                        <ul className="space-y-4 text-white/50 text-sm">
+                            <li>
+                                <Link
+                                    href="/services"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/about"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/portfolio"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    Portfolio
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/contact"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="text-white font-bold mb-6">Connect</h4>
+                        <ul className="space-y-4 text-white/50 text-sm">
+                            <li>
+                                <a
+                                    href="#"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    X / Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="hover:text-accent-orange transition-colors"
+                                >
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-
-            {/* Process/CTA placeholder */}
-            <section className="py-20 bg-secondary text-center px-6">
-                <div className="container mx-auto">
-                    <h2 className="text-3xl font-bold text-primary mb-6">Not sure exactly what you need?</h2>
-                    <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-                        We specialize in custom solutions. Let's discuss your project and find the perfect path forward.
-                    </p>
-                    <Link href="/contact" className="px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-lg">
-                        Schedule a Consultation
-                    </Link>
+                <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 text-center text-white/30 text-xs">
+                    © {new Date().getFullYear()} Ignis Intellect. All rights reserved.
                 </div>
-            </section>
-
-            <Footer />
-        </main>
+            </footer>
+        </div>
     );
 }

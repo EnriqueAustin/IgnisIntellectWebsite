@@ -1,79 +1,99 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { Flame, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
-import siteData from "@/data/site.json";
 
 export default function Footer() {
-    const { contact } = siteData.pages;
+    const [email, setEmail] = useState("");
+
+    const handleNewsletterSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log("Newsletter signup:", email);
+        setEmail("");
+    };
 
     return (
-        <footer className="bg-primary text-white pt-16 pb-8 border-t border-white/10">
-            <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <footer className="bg-background-dark pt-20 pb-10 border-t border-white/5">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand */}
-                    <div className="md:col-span-1">
-                        <Link href="/" className="flex items-center gap-2 mb-4 group">
-                            <Flame className="w-6 h-6 text-accent" />
-                            <span className="text-xl font-bold font-heading">
-                                Ignis<span className="text-accent">Intellect</span>
-                            </span>
+                    <div className="space-y-6">
+                        <Link href="/" className="flex items-center gap-2">
+                            <div className="orange-gradient p-1 rounded-md">
+                                <span className="material-symbols-outlined text-white text-sm">local_fire_department</span>
+                            </div>
+                            <h2 className="text-xl font-bold tracking-tight">
+                                <span className="text-accent-orange">Ignis</span>
+                                <span className="text-white">Intellect</span>
+                            </h2>
                         </Link>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            Igniting digital transformation with cutting-edge web development and ethical AI integration.
+                        <p className="text-slate-400 text-sm leading-relaxed">
+                            Leading the charge in AI-driven digital transformation from the heart of Cape Town.
                         </p>
                         <div className="flex gap-4">
-                            <a href={contact.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-accent hover:text-white transition-all">
-                                <Linkedin size={18} />
+                            <a href="#" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-slate-400 hover:text-accent-orange transition-colors">
+                                <span className="material-symbols-outlined text-xl">share</span>
                             </a>
-                            <a href={contact.socials.twitter} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-accent hover:text-white transition-all">
-                                <Twitter size={18} />
+                            <a href="#" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-slate-400 hover:text-accent-orange transition-colors">
+                                <span className="material-symbols-outlined text-xl">group</span>
+                            </a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-slate-400 hover:text-accent-orange transition-colors">
+                                <span className="material-symbols-outlined text-xl">public</span>
                             </a>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Services Links */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 font-heading">Company</h3>
-                        <ul className="space-y-3 text-sm text-gray-400">
-                            <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-                            <li><Link href="/services" className="hover:text-accent transition-colors">Services</Link></li>
-                            <li><Link href="/portfolio" className="hover:text-accent transition-colors">Portfolio</Link></li>
-                            <li><Link href="/blog" className="hover:text-accent transition-colors">Insights</Link></li>
+                        <h4 className="text-white font-bold mb-6">Services</h4>
+                        <ul className="space-y-4 text-slate-400 text-sm">
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">Web Development</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">AI &amp; Machine Learning</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">Cloud Applications</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">UX/UI Design</Link></li>
                         </ul>
                     </div>
 
-                    {/* Services */}
+                    {/* Company Links */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 font-heading">Solutions</h3>
-                        <ul className="space-y-3 text-sm text-gray-400">
-                            <li><Link href="/services" className="hover:text-accent transition-colors">Web Development</Link></li>
-                            <li><Link href="/services" className="hover:text-accent transition-colors">AI Integration</Link></li>
-                            <li><Link href="/services" className="hover:text-accent transition-colors">Mobile Apps</Link></li>
-                            <li><Link href="/services" className="hover:text-accent transition-colors">SEO & Marketing</Link></li>
+                        <h4 className="text-white font-bold mb-6">Company</h4>
+                        <ul className="space-y-4 text-slate-400 text-sm">
+                            <li><Link href="/about" className="hover:text-accent-orange transition-colors">About Us</Link></li>
+                            <li><Link href="/portfolio" className="hover:text-accent-orange transition-colors">Our Portfolio</Link></li>
+                            <li><Link href="#" className="hover:text-accent-orange transition-colors">Careers</Link></li>
+                            <li><Link href="/contact" className="hover:text-accent-orange transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Newsletter */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 font-heading">Contact</h3>
-                        <ul className="space-y-4 text-sm text-gray-400">
-                            <li className="flex items-start gap-3">
-                                <MapPin size={18} className="text-accent mt-0.5" />
-                                <span>{contact.address}</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail size={18} className="text-accent" />
-                                <a href={`mailto:${contact.email}`} className="hover:text-accent transition-colors">{contact.email}</a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Phone size={18} className="text-accent" />
-                                <a href={`tel:${contact.phone}`} className="hover:text-accent transition-colors">{contact.phone}</a>
-                            </li>
-                        </ul>
+                        <h4 className="text-white font-bold mb-6">Newsletter</h4>
+                        <p className="text-slate-400 text-sm mb-4">Stay updated with the latest in AI tech.</p>
+                        <form className="flex gap-2" onSubmit={handleNewsletterSubmit}>
+                            <input
+                                className="flex-1 bg-primary/30 border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-accent-orange"
+                                placeholder="Email address"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <button
+                                type="submit"
+                                className="bg-accent-orange text-white p-2 rounded-lg hover:bg-accent-fire transition-colors"
+                            >
+                                <span className="material-symbols-outlined">send</span>
+                            </button>
+                        </form>
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
-                    <p>© {new Date().getFullYear()} Ignis Intellect. All rights reserved.</p>
+                {/* Bottom Bar */}
+                <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Ignis Intellect. All rights reserved.</p>
+                    <div className="flex gap-8 text-slate-500 text-sm">
+                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                    </div>
                 </div>
             </div>
         </footer>
