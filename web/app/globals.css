@@ -26,7 +26,7 @@
 }
 
 .navy-glass {
-  background: rgba(15, 25, 35, 0.8);
+  background-color: rgba(15, 25, 35, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
