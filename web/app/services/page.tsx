@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -273,103 +274,8 @@ export default function Services() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-primary pt-20 pb-10 px-6 md:px-10 border-t border-white/10">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
-                    <div className="col-span-1 md:col-span-2">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="text-accent-orange">
-                                <span className="material-symbols-outlined">
-                                    local_fire_department
-                                </span>
-                            </div>
-                            <h2 className="text-white text-lg font-black uppercase tracking-widest">
-                                Ignis Intellect
-                            </h2>
-                        </div>
-                        <p className="text-white/50 max-w-sm mb-6 leading-relaxed">
-                            Premium digital workshop crafting high-performance websites and
-                            intelligent AI solutions for the modern era.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 className="text-white font-bold mb-6">Quick Links</h4>
-                        <ul className="space-y-4 text-white/50 text-sm">
-                            <li>
-                                <Link
-                                    href="/services"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    Services
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/about"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/portfolio"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    Portfolio
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/contact"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="text-white font-bold mb-6">Connect</h4>
-                        <ul className="space-y-4 text-white/50 text-sm">
-                            <li>
-                                <a
-                                    href="#"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    LinkedIn
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    X / Twitter
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="hover:text-accent-orange transition-colors"
-                                >
-                                    Instagram
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 text-center text-white/30 text-xs">
-                    © {new Date().getFullYear()} Ignis Intellect. All rights reserved.
-                </div>
-            </footer>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

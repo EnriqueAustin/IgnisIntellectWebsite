@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -251,23 +252,8 @@ export default function About() {
             </main>
 
             {/* Simplified Footer */}
-            <footer className="bg-[#050b12] border-t border-white/5 py-12">
-                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="flex items-center gap-3">
-                        <div className="text-accent-orange">
-                            <span className="material-symbols-outlined">local_fire_department</span>
-                        </div>
-                        <h2 className="text-white text-lg font-bold">Ignis Intellect</h2>
-                    </div>
-                    <p className="text-slate-500 text-sm">
-                        © {new Date().getFullYear()} Ignis Intellect. Built with precision in South Africa.
-                    </p>
-                    <div className="flex gap-6">
-                        <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-                        <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">Terms of Service</a>
-                    </div>
-                </div>
-            </footer>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }
