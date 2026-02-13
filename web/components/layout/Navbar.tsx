@@ -64,8 +64,7 @@ export default function Navbar() {
                     isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 )}
             >
-                {/* <div className="navy-glass border-b border-white/10 shadow-2xl backdrop-blur-xl flex flex-col p-6 gap-4"> */}
-                <div className="bg-[#0f1923]/90 backdrop-blur-md border-b border-white/10 shadow-2xl flex flex-col p-6 gap-4 supports-[backdrop-filter]:bg-[#0f1923]/60">
+                <div className="navy-glass border-b border-white/10 shadow-2xl backdrop-blur-xl flex flex-col p-6 gap-4">
                     {siteData.navigation.map((item) => (
                         <Link
                             key={item.path}
