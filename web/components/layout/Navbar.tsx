@@ -60,11 +60,11 @@ export default function Navbar() {
             {/* Mobile Dropdown */}
             <div
                 className={cn(
-                    "md:hidden absolute top-full left-0 right-0 navy-glass border-b border-white/10 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden backdrop-blur-xl",
+                    "md:hidden absolute top-full left-0 right-0 overflow-hidden transition-all duration-300 ease-in-out",
                     isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 )}
             >
-                <div className="flex flex-col p-6 gap-4">
+                <div className="navy-glass border-b border-white/10 shadow-2xl backdrop-blur-xl flex flex-col p-6 gap-4">
                     {siteData.navigation.map((item) => (
                         <Link
                             key={item.path}
