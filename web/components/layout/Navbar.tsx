@@ -10,7 +10,7 @@ export default function Navbar() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 navy-glass border-b border-primary/20 dark:border-white/10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 backdrop-blur-xl">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
@@ -60,7 +60,7 @@ export default function Navbar() {
             {/* Mobile Dropdown */}
             <div
                 className={cn(
-                    "md:hidden absolute top-full left-0 right-0 navy-glass border-b border-white/10 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden",
+                    "md:hidden absolute top-full left-0 right-0 navy-glass border-b border-white/10 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden backdrop-blur-xl",
                     isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 )}
             >
