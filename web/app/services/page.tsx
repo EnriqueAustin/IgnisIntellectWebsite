@@ -13,14 +13,14 @@ const services = [
     {
         icon: "code",
         label: "Architecture",
-        title: "High-Performance Web Development",
+        title: "Web Development",
         description:
-            "We build more than just websites. We engineer high-performance responsive experiences using Next.js, Headless CMS architectures, and optimized web applications built for extreme speed and SEO.",
+            "Custom Web Applications, E-Commerce Platforms, and CMS Solutions (WordPress/Headless). We build responsive & SEO-friendly sites optimized for performance.",
         features: [
-            "Next.js 14 Expertise",
-            "Headless CMS (Strapi/Sanity)",
-            "Progressive Web Apps",
-            "E-commerce (Shopify/Next)",
+            "Custom Web Apps",
+            "E-Commerce",
+            "Headless CMS",
+            "SEO-Friendly",
         ],
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzYAeh-6qNNBzrovpWVIf6bzgtCAwthcIZiGYaT9-a2ynwt7Nf__RFDsZq6Wi5S-jFZ90KnG3RDx5S6tjQx7OzVxaz3Ca5_psa6aO8l56Lv5NSwde7Tj5WMYv0kUdSi0tf87Ghkg13SPTIVO1788Hp3aE9hOwtu76JyJLhfc2PREDzJo6TNFEvIQe7fIbzvMMzdDceqF41NP-XWp2cxQRGfGtwzllE4quQ_HQCk0MUh5UehUQJo_TCr2dP9w7bq2Axx7b6vnbEiM9J",
         imageAlt: "Modern code editor and minimalist workspace",
@@ -29,47 +29,82 @@ const services = [
     {
         icon: "psychology",
         label: "Intelligence",
-        title: "Advanced AI & Machine Learning",
+        title: "AI Automation & Solutions",
         description:
-            "Inject intelligence into your workflow. From custom LLM fine-tuning to automated computer vision, we provide end-to-end AI implementation that delivers measurable ROI.",
+            "Intelligent Chatbots & AI Agents, Workflow Automation, and System Integrations (CRM, WhatsApp). Custom AI Setups like OpenClaw tailored to your needs.",
         features: [
-            "Custom Chatbots",
-            "ML Model Training",
-            "NLP Processing",
-            "Predictive Analytics",
+            "Chatbots & Agents",
+            "Workflow Automation",
+            "CRM Integration",
+            "OpenClaw Setup",
         ],
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDZym24CoFc3sXj2s3e9a8CMpE2KU27-XDd44dUn52MdsB3uATzlafk72q57SNDXyntPWbkLDhDxj1B4rB8PdS8Di3xkGe-fiiyeSbq0JEheYxRY5XpPHO8APBVN9vAJj_k_xxYjXPsjiakn7dfm9hF-dAy8OQ--CG094lerPQMSPKhDB22rruUhLibvomxiRE0U-54p8rAWO-ROTuedWloSaY0CbVmM6haxRPmL9Ztwfbvr5B_NTiXosHycu0P2eMpIR1qMnQ5_TsZ",
         imageAlt: "Abstract glowing blue and orange neural network",
         type: "features" as const,
     },
     {
-        icon: "smartphone",
-        label: "Mobility",
-        title: "Seamless Mobile Ecosystems",
+        icon: "palette",
+        label: "Aesthetics",
+        title: "Design & Creative",
         description:
-            "Native performance with cross-platform efficiency. We specialize in React Native and Flutter to deliver world-class apps for iOS and Android simultaneously.",
-        techs: [
-            { code: "RN", name: "React Native" },
-            { code: "FL", name: "Flutter" },
-            { code: "iOS", name: "Native Swift" },
+            "UI/UX Design and User-Centered Interfaces that captivate and convert. We focus on intuitive layouts and visual storytelling.",
+        features: [
+            "UI/UX Design",
+            "User-Centered UI",
+            "Brand Identity",
+            "Prototyping",
         ],
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBr32QYAwBubuReorQIAliVL3TbZt1EmFI0XpNQeXdhdIE3rseT4aqwVUIOr3IIiOVYfcvsTAwdczjhmdC6aoKIntr4wAQIFHK_z7qBpGdU92Vvnq1ltFqPdcpv4Ls4TXqdq_tUwL1pNfpTVWMTNgSWkjLL_EvKWuuEtSRiNbGdcsiFpGn_HulJYUNubHW8IDNLNuLnwJz5ENUlOIJy7GixNra-tFpsNj0JHLrzRD7291_-slBsIuOLI-0xLA0u_OdxhQ3CMnWsXLNf",
-        imageAlt: "Sleek smartphone display with modern application UI",
-        type: "techs" as const,
+        imageAlt: "Digital design workspace",
+        type: "features" as const,
     },
     {
-        icon: "trending_up",
-        label: "Growth",
-        title: "AI-Powered Search & Marketing",
+        icon: "school",
+        label: "Guidance",
+        title: "Consulting & Education",
         description:
-            "Dominate search results with AI-optimized content strategy and technical SEO. We leverage data tracking to ensure every marketing dollar translates to growth.",
-        insights: [
-            { icon: "query_stats", text: "Deep Data Insights & GA4 Integration" },
-            { icon: "auto_fix_high", text: "AI-Content Strategy" },
+            "AI Strategy & Roadmapping, Adoption Consulting, and Education. We provide training workshops to upskill your team in modern AI tools.",
+        features: [
+            "AI Strategy",
+            "Adoption Consulting",
+            "Workshops",
+            "Roadmapping",
         ],
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBsGFdrKbZA4eqfpF1kjMwLXlSyL5Mj8XbAX5_xj2MFN_nZ-5OlTEQmHvRpZX06JgxwcNdFrtRQFycEMAY5ANHTZLP3aFr7GLmP3nuJLK3gF4p3WimyUsBcaebb4VK7uGj_DrsX5hyqqPTW8C7SuQa9Psknm22-_cwqhs8bTwmZ11JeQkOda3cUGA50Pw6Q6BvNun4pr3fDuKtQ3kLDjPw-LKbWt8SVCb0SCWCHdC7pUu3WdCusYC-0em9jUCeIeYEC73CfFv2v0TTE",
-        imageAlt: "Digital marketing analytics and growth charts",
-        type: "insights" as const,
+        imageAlt: "Team collaboration and strategy session",
+        type: "features" as const,
+    },
+    {
+        icon: "fact_check",
+        label: "Validation",
+        title: "Audits & Assessments",
+        description:
+            "AI Readiness Audits (evaluating business processes & maturity) and SEO/Digital Performance Audits to identify opportunities for growth.",
+        features: [
+            "AI Readiness",
+            "Process Evaluation",
+            "SEO Audits",
+            "Performance Check",
+        ],
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBsGFdrKbZA4eqfpF1kjMwLXlSyL5Mj8XbAX5_xj2MFN_nZ-5OlTEQmHvRpZX06JgxwcNdFrtRQFycEMAY5ANHTZLP3aFr7GLmP3nuJLK3gF4p3WimyUsBcaebb4VK7uGj_DrsX5hyqqPTW8C7SuQa9Psknm22-_cwqhs8bTwmZ11JeQkOda3cUGA50Pw6Q6BvNun4pr3fDuKtQ3kLDjPw-LKbWt8SVCb0SCWCHdC7pUu3WdCusYC-0em9jUCeIeYEC73CfFv2v0TTE",
+        imageAlt: "Data analysis and audit charts",
+        type: "features" as const,
+    },
+    {
+        icon: "build",
+        label: "Reliability",
+        title: "Support & Maintenance",
+        description:
+            "Website maintenance, updates, ongoing AI monitoring, and performance optimization to ensure your digital assets remain secure and efficient.",
+        features: [
+            "Maintenance",
+            "Updates",
+            "AI Monitoring",
+            "Optimization",
+        ],
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzYAeh-6qNNBzrovpWVIf6bzgtCAwthcIZiGYaT9-a2ynwt7Nf__RFDsZq6Wi5S-jFZ90KnG3RDx5S6tjQx7OzVxaz3Ca5_psa6aO8l56Lv5NSwde7Tj5WMYv0kUdSi0tf87Ghkg13SPTIVO1788Hp3aE9hOwtu76JyJLhfc2PREDzJo6TNFEvIQe7fIbzvMMzdDceqF41NP-XWp2cxQRGfGtwzllE4quQ_HQCk0MUh5UehUQJo_TCr2dP9w7bq2Axx7b6vnbEiM9J",
+        imageAlt: "Server monitoring and maintenance dashboard",
+        type: "features" as const,
     },
 ];
 
@@ -106,8 +141,8 @@ export default function Services() {
                             </span>
                         </h1>
                         <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                            Bridging the gap between imagination and technical execution with
-                            high-performance digital products that scale.
+                            Cape Town based agency delivering high-performance digital products & AI solutions
+                            that scale globally.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
@@ -159,59 +194,19 @@ export default function Services() {
                                         </p>
 
                                         {/* Feature list */}
-                                        {service.type === "features" && service.features && (
-                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                                {service.features.map((feat, i) => (
-                                                    <li
-                                                        key={i}
-                                                        className="flex items-center gap-2 text-white/90 font-medium"
-                                                    >
-                                                        <span className="material-symbols-outlined text-accent-orange">
-                                                            check_circle
-                                                        </span>
-                                                        {feat}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-
-                                        {/* Tech badges */}
-                                        {service.type === "techs" && service.techs && (
-                                            <div className="grid grid-cols-3 gap-4">
-                                                {service.techs.map((tech, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className="bg-white/5 p-4 rounded-lg border border-white/10 text-center"
-                                                    >
-                                                        <p className="text-accent-orange font-bold text-xl">
-                                                            {tech.code}
-                                                        </p>
-                                                        <p className="text-xs text-white/50 uppercase">
-                                                            {tech.name}
-                                                        </p>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
-
-                                        {/* Insight rows */}
-                                        {service.type === "insights" && service.insights && (
-                                            <div className="space-y-4">
-                                                {service.insights.map((item, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className="flex items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/10"
-                                                    >
-                                                        <span className="material-symbols-outlined text-accent-orange">
-                                                            {item.icon}
-                                                        </span>
-                                                        <span className="text-white/90">
-                                                            {item.text}
-                                                        </span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
+                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            {service.features.map((feat, i) => (
+                                                <li
+                                                    key={i}
+                                                    className="flex items-center gap-2 text-white/90 font-medium"
+                                                >
+                                                    <span className="material-symbols-outlined text-accent-orange">
+                                                        check_circle
+                                                    </span>
+                                                    {feat}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
                                     {/* Image */}

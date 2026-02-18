@@ -55,23 +55,23 @@
       "services_overview": [
         {
           "title": "Web Development",
-          "description": "Responsive sites & custom apps.",
+          "description": "Custom Apps, E-Commerce & CMS.",
           "icon": "code"
         },
         {
-          "title": "AI Solutions",
-          "description": "Chatbots, NLP & Automation.",
-          "icon": "cpu"
+          "title": "AI Automation",
+          "description": "Chatbots, Agents & Workflows.",
+          "icon": "psychology"
         },
         {
-          "title": "Mobile Apps",
-          "description": "iOS & Android solutions.",
-          "icon": "smartphone"
+          "title": "AI Audits",
+          "description": "Readiness & Process Assessments.",
+          "icon": "fact_check"
         },
         {
-          "title": "Digital Marketing",
-          "description": "SEO & AI-driven visibility.",
-          "icon": "trending-up"
+          "title": "Consulting",
+          "description": "Strategy, Education & Adoption.",
+          "icon": "school"
         }
       ],
       "stats": [
@@ -117,33 +117,50 @@
         {
           "title": "Web Development",
           "details": [
-            "Responsive Sites",
-            "eCommerce",
-            "Custom Apps"
+            "Custom Web Applications",
+            "E-Commerce Platforms",
+            "CMS Solutions (WordPress/Headless)",
+            "Responsive & SEO-Friendly Sites"
           ]
         },
         {
-          "title": "AI Solutions",
+          "title": "AI Automation & Solutions",
           "details": [
-            "Chatbots",
-            "ML Models",
-            "Automation"
+            "Intelligent Chatbots & AI Agents",
+            "Workflow Automation",
+            "System Integrations (CRM, WhatsApp)",
+            "Custom AI Setups (OpenClaw)"
           ]
         },
         {
-          "title": "Mobile Apps",
+          "title": "Design & Creative",
           "details": [
-            "iOS",
-            "Android",
-            "Cross-Platform"
+            "UI/UX Design",
+            "User-Centered Interfaces"
           ]
         },
         {
-          "title": "SEO & Marketing",
+          "title": "Consulting & Education",
           "details": [
-            "SEO",
-            "PPC",
-            "Social Media"
+            "AI Strategy & Roadmapping",
+            "AI Adoption Consulting",
+            "AI Education & Training"
+          ]
+        },
+        {
+          "title": "Audits & Assessments",
+          "details": [
+            "AI Readiness Audits",
+            "Business Process Evaluation",
+            "SEO & Digital Performance Audits"
+          ]
+        },
+        {
+          "title": "Support & Maintenance",
+          "details": [
+            "Website Maintenance & Updates",
+            "Ongoing AI Monitoring",
+            "Performance Optimization"
           ]
         }
       ]

@@ -3,22 +3,22 @@ export default function Services() {
         {
             icon: "terminal",
             title: "Web Development",
-            description: "Custom performance-driven websites built with the latest frameworks and edge computing.",
+            description: "Custom Web Applications, E-Commerce Platforms, and CMS Solutions built for high performance.",
         },
         {
-            icon: "neurology",
-            title: "AI Solutions",
-            description: "Intelligent automation, LLM integrations, and predictive analytics for your business workflow.",
+            icon: "psychology",
+            title: "AI Automation",
+            description: "Intelligent Chatbots, AI Agents, and Workflow Automation to streamline your operations.",
         },
         {
-            icon: "smart_toy",
-            title: "Mobile Apps",
-            description: "Scalable iOS and Android applications with native-level performance and AI features.",
+            icon: "fact_check",
+            title: "Audits & Assessments",
+            description: "AI Readiness Audits and Process Evaluations to uncover automation opportunities.",
         },
         {
-            icon: "query_stats",
-            title: "Digital Marketing",
-            description: "Data-driven growth strategies powered by machine learning and behavioral insights.",
+            icon: "school",
+            title: "Consulting & Education",
+            description: "AI Strategy, Roadmapping, and Training Workshops to empower your team.",
         },
     ];
 
@@ -42,7 +42,7 @@ export default function Services() {
                             <h4 className="text-xl font-bold text-white mb-3">{service.title}</h4>
                             <p className="text-slate-400 text-sm leading-relaxed mb-6">{service.description}</p>
                             <a
-                                href="#"
+                                href="/services"
                                 className="text-accent-orange font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all"
                             >
                                 Learn More{" "}
