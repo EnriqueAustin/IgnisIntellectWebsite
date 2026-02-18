@@ -48,9 +48,9 @@ export default function Footer() {
                         <h4 className="text-white font-bold mb-6">Services</h4>
                         <ul className="space-y-4 text-slate-400 text-sm">
                             <li><Link href="/services" className="hover:text-accent-orange transition-colors">Web Development</Link></li>
-                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">AI &amp; Machine Learning</Link></li>
-                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">Cloud Applications</Link></li>
-                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">UX/UI Design</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">AI Automation</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">Design & Creative</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-orange transition-colors">Audits & Assessments</Link></li>
                         </ul>
                     </div>
 
