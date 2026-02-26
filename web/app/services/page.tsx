@@ -2,111 +2,13 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { servicesData } from "@/data/servicesData";
 
 export const metadata: Metadata = {
     title: "Services - Ignis Intellect",
     description:
         "Bridging the gap between imagination and technical execution with high-performance digital products that scale.",
 };
-
-const services = [
-    {
-        icon: "code",
-        label: "Architecture",
-        title: "Web Development",
-        description:
-            "Custom Web Applications, E-Commerce Platforms, and CMS Solutions (WordPress/Headless). We build responsive & SEO-friendly sites optimized for performance.",
-        features: [
-            "Custom Web Apps",
-            "E-Commerce",
-            "Headless CMS",
-            "SEO-Friendly",
-        ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzYAeh-6qNNBzrovpWVIf6bzgtCAwthcIZiGYaT9-a2ynwt7Nf__RFDsZq6Wi5S-jFZ90KnG3RDx5S6tjQx7OzVxaz3Ca5_psa6aO8l56Lv5NSwde7Tj5WMYv0kUdSi0tf87Ghkg13SPTIVO1788Hp3aE9hOwtu76JyJLhfc2PREDzJo6TNFEvIQe7fIbzvMMzdDceqF41NP-XWp2cxQRGfGtwzllE4quQ_HQCk0MUh5UehUQJo_TCr2dP9w7bq2Axx7b6vnbEiM9J",
-        imageAlt: "Modern code editor and minimalist workspace",
-        type: "features" as const,
-    },
-    {
-        icon: "psychology",
-        label: "Intelligence",
-        title: "AI Automation & Solutions",
-        description:
-            "Intelligent Chatbots & AI Agents, Workflow Automation, and System Integrations (CRM, WhatsApp). Custom AI Setups like OpenClaw tailored to your needs.",
-        features: [
-            "Chatbots & Agents",
-            "Workflow Automation",
-            "CRM Integration",
-            "OpenClaw Setup",
-        ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDZym24CoFc3sXj2s3e9a8CMpE2KU27-XDd44dUn52MdsB3uATzlafk72q57SNDXyntPWbkLDhDxj1B4rB8PdS8Di3xkGe-fiiyeSbq0JEheYxRY5XpPHO8APBVN9vAJj_k_xxYjXPsjiakn7dfm9hF-dAy8OQ--CG094lerPQMSPKhDB22rruUhLibvomxiRE0U-54p8rAWO-ROTuedWloSaY0CbVmM6haxRPmL9Ztwfbvr5B_NTiXosHycu0P2eMpIR1qMnQ5_TsZ",
-        imageAlt: "Abstract glowing blue and orange neural network",
-        type: "features" as const,
-    },
-    {
-        icon: "palette",
-        label: "Aesthetics",
-        title: "Design & Creative",
-        description:
-            "UI/UX Design and User-Centered Interfaces that captivate and convert. We focus on intuitive layouts and visual storytelling.",
-        features: [
-            "UI/UX Design",
-            "User-Centered UI",
-            "Brand Identity",
-            "Prototyping",
-        ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBr32QYAwBubuReorQIAliVL3TbZt1EmFI0XpNQeXdhdIE3rseT4aqwVUIOr3IIiOVYfcvsTAwdczjhmdC6aoKIntr4wAQIFHK_z7qBpGdU92Vvnq1ltFqPdcpv4Ls4TXqdq_tUwL1pNfpTVWMTNgSWkjLL_EvKWuuEtSRiNbGdcsiFpGn_HulJYUNubHW8IDNLNuLnwJz5ENUlOIJy7GixNra-tFpsNj0JHLrzRD7291_-slBsIuOLI-0xLA0u_OdxhQ3CMnWsXLNf",
-        imageAlt: "Digital design workspace",
-        type: "features" as const,
-    },
-    {
-        icon: "school",
-        label: "Guidance",
-        title: "Consulting & Education",
-        description:
-            "AI Strategy & Roadmapping, Adoption Consulting, and Education. We provide training workshops to upskill your team in modern AI tools.",
-        features: [
-            "AI Strategy",
-            "Adoption Consulting",
-            "Workshops",
-            "Roadmapping",
-        ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBsGFdrKbZA4eqfpF1kjMwLXlSyL5Mj8XbAX5_xj2MFN_nZ-5OlTEQmHvRpZX06JgxwcNdFrtRQFycEMAY5ANHTZLP3aFr7GLmP3nuJLK3gF4p3WimyUsBcaebb4VK7uGj_DrsX5hyqqPTW8C7SuQa9Psknm22-_cwqhs8bTwmZ11JeQkOda3cUGA50Pw6Q6BvNun4pr3fDuKtQ3kLDjPw-LKbWt8SVCb0SCWCHdC7pUu3WdCusYC-0em9jUCeIeYEC73CfFv2v0TTE",
-        imageAlt: "Team collaboration and strategy session",
-        type: "features" as const,
-    },
-    {
-        icon: "fact_check",
-        label: "Validation",
-        title: "Audits & Assessments",
-        description:
-            "AI Readiness Audits (evaluating business processes & maturity) and SEO/Digital Performance Audits to identify opportunities for growth.",
-        features: [
-            "AI Readiness",
-            "Process Evaluation",
-            "SEO Audits",
-            "Performance Check",
-        ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBsGFdrKbZA4eqfpF1kjMwLXlSyL5Mj8XbAX5_xj2MFN_nZ-5OlTEQmHvRpZX06JgxwcNdFrtRQFycEMAY5ANHTZLP3aFr7GLmP3nuJLK3gF4p3WimyUsBcaebb4VK7uGj_DrsX5hyqqPTW8C7SuQa9Psknm22-_cwqhs8bTwmZ11JeQkOda3cUGA50Pw6Q6BvNun4pr3fDuKtQ3kLDjPw-LKbWt8SVCb0SCWCHdC7pUu3WdCusYC-0em9jUCeIeYEC73CfFv2v0TTE",
-        imageAlt: "Data analysis and audit charts",
-        type: "features" as const,
-    },
-    {
-        icon: "build",
-        label: "Reliability",
-        title: "Support & Maintenance",
-        description:
-            "Website maintenance, updates, ongoing AI monitoring, and performance optimization to ensure your digital assets remain secure and efficient.",
-        features: [
-            "Maintenance",
-            "Updates",
-            "AI Monitoring",
-            "Optimization",
-        ],
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzYAeh-6qNNBzrovpWVIf6bzgtCAwthcIZiGYaT9-a2ynwt7Nf__RFDsZq6Wi5S-jFZ90KnG3RDx5S6tjQx7OzVxaz3Ca5_psa6aO8l56Lv5NSwde7Tj5WMYv0kUdSi0tf87Ghkg13SPTIVO1788Hp3aE9hOwtu76JyJLhfc2PREDzJo6TNFEvIQe7fIbzvMMzdDceqF41NP-XWp2cxQRGfGtwzllE4quQ_HQCk0MUh5UehUQJo_TCr2dP9w7bq2Axx7b6vnbEiM9J",
-        imageAlt: "Server monitoring and maintenance dashboard",
-        type: "features" as const,
-    },
-];
 
 function ServiceImage({ src, alt }: { src: string; alt: string }) {
     return (
@@ -164,7 +66,7 @@ export default function Services() {
                 {/* Detailed Services Breakdown */}
                 <section className="py-24 px-6 md:px-10">
                     <div className="max-w-7xl mx-auto space-y-32">
-                        {services.map((service, index) => {
+                        {servicesData.map((service, index) => {
                             const isEven = index % 2 === 1;
 
                             return (
@@ -190,11 +92,11 @@ export default function Services() {
                                             {service.title}
                                         </h2>
                                         <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                                            {service.description}
+                                            {service.shortDescription}
                                         </p>
 
                                         {/* Feature list */}
-                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                                             {service.features.map((feat, i) => (
                                                 <li
                                                     key={i}
@@ -207,6 +109,15 @@ export default function Services() {
                                                 </li>
                                             ))}
                                         </ul>
+
+                                        {/* Learn More Link */}
+                                        <Link
+                                            href={`/services/${service.slug}`}
+                                            className="inline-flex items-center gap-2 px-6 py-3 orange-gradient text-white font-bold rounded-lg transition-all hover:scale-105 glow-orange"
+                                        >
+                                            Learn More & Pricing
+                                            <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                                        </Link>
                                     </div>
 
                                     {/* Image */}
@@ -234,7 +145,7 @@ export default function Services() {
                                 Transparent Pricing
                             </p>
                             <h3 className="text-white text-2xl font-bold">
-                                Packages from R10,000. Custom quotes tailored to your project.
+                                Packages from R1,499. Custom quotes tailored to your project.
                             </h3>
                         </div>
                         <Link
@@ -268,7 +179,6 @@ export default function Services() {
                 </section>
             </main>
 
-            {/* Footer */}
             {/* Footer */}
             <Footer />
         </div>
