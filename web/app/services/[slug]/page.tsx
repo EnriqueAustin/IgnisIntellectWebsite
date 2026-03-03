@@ -180,7 +180,7 @@ export default async function ServicePage({
                             ))}
                         </div>
                         <p className="text-center text-white/40 text-sm mt-10">
-                            All prices exclude VAT. Custom packages available on request.{" "}
+                            {/* All prices include VAT.*/}Custom packages available on request.{" "} 
                             <Link href="/contact" className="text-accent-orange hover:underline">
                                 Contact us
                             </Link>{" "}
