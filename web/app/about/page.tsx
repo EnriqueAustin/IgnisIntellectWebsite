@@ -37,22 +37,17 @@ export default function About() {
             name: "Enrique Austin",
             role: "Founder & AI Lead",
             badge: "Founder",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAVHqGxrcX1d2g5fXDx8sFnQBnRcglcZutZIwuCE4SJKW9UAhLKjJEyOTAGaXIm0JmbGKUA0UZPXQ3FIdHWZBvi8KGx2KTjAzmUSAuXx7JFEKSFfmwn3q2RmBQLlc2FxXOgv3Ej2PKX9T6zhWLw0FItgMNcF1sZLmeG_m_FruwQ75eC1NRqiqjll8_SZdlGc7KrnoWQg2CmPaNbF5IbDrZKvl2txl_D7pGA7MfjmM0ZL0Y2wBByHDCUnVV_U6ZT06l8Ta1uvI5olNEq",
-            alt: "Professional portrait of Enrique Austin",
+            image: "/enriqueaustin.jpeg",
+            alt: "Professional portrait of Enrique Austin, Founder and AI Lead at Ignis Intellect",
+            linkedin: "https://www.linkedin.com/in/enrique-austin-953a71156/",
         },
         {
-            name: "Sarah J.",
-            role: "Senior Web Dev",
-            badge: null,
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDllklUdDB96bkEiab8s4A0nypMc7yJL_3JbXvPgBsUNz1RX6ImstndCbJzQpKaA2pHuFguVOo-YXKxzV6Xxz6NSxaGH73FUgPXkvtSF7iBsv7e1TAjrQy_qqxBznxKB1rCmWG674Dub5s5VTd06T5oS9Fth58NliG7l3f9N0paq83UKrPJOOtPFed86JXmaXC-lhmjbIZy7gikICaMY7YAXiFpbPnneJTWSKRV89z3Oisy4n6vGdQcMcgCB7ZsZRj1BSI7ZtlIXr81",
-            alt: "Professional portrait of Sarah J.",
-        },
-        {
-            name: "David K.",
-            role: "UI/UX Designer",
-            badge: null,
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBMpsIOeQjRAVIoTKpKfbF5Gm-vDswX-7Efc1zF0eBNfjJwtcbQOOBMGw2VkLMWrhCKH2QZXGlOJsZZENe9go4_MgqHXVJ9x32f9QkJhZf9xttujpQdTEwT053YtrWLtIDJqs-8fnjnvmvythRtxbLw3FJL-VrMXG_ZGhPNWa7Kn7meDStKuAgvRXl0yKHRKWWWALvM4fxU_bl9M8w0PqjUy458Bq_adPC3-nuHVOj8SfKEhu9qPQxE4CmlDmHAsy-YjyyqQniAyfDs",
-            alt: "Professional portrait of David K.",
+            name: "James Laubscher",
+            role: "Co-Founder & Strategy Lead",
+            badge: "Co-Founder",
+            image: "/noImage.jpg",
+            alt: "James Laubscher, Co-Founder and Strategy Lead at Ignis Intellect",
+            linkedin: "#",
         },
     ];
 
@@ -144,7 +139,7 @@ export default function About() {
                                 A diverse collective of engineers, designers, and AI researchers working from the heart of the Western Cape.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                             {team.map((member, index) => (
                                 <div
                                     key={index}
@@ -169,12 +164,11 @@ export default function About() {
                                         <h5 className="text-xl font-bold text-white mb-1">{member.name}</h5>
                                         <p className="text-slate-400 text-sm mb-4">{member.role}</p>
                                         <div className="flex justify-center gap-4 text-slate-500">
-                                            <a href="#" className="hover:text-accent-orange transition-colors">
-                                                <span className="material-symbols-outlined">link</span>
-                                            </a>
-                                            <a href="#" className="hover:text-accent-orange transition-colors">
-                                                <span className="material-symbols-outlined">mail</span>
-                                            </a>
+                                            {member.linkedin && member.linkedin !== "#" && (
+                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-accent-orange transition-colors" aria-label={`${member.name} LinkedIn profile`}>
+                                                    <span className="material-symbols-outlined">link</span>
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
