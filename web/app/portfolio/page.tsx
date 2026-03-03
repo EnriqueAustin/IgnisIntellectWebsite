@@ -81,7 +81,7 @@ export default function Portfolio() {
                                 <div className="relative aspect-[16/10] overflow-hidden">
                                     <img
                                         src={project.image}
-                                        alt={project.title}
+                                        alt={project.alt || project.title}
                                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute top-4 left-4 rounded-lg bg-accent-orange px-3 py-1 text-xs font-bold text-white shadow-lg">

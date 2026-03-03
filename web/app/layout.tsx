@@ -12,8 +12,53 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: siteData.site_metadata.title,
+  metadataBase: new URL("https://ignisintellect.com"),
+  title: {
+    default: siteData.site_metadata.title,
+    template: "%s | Ignis Intellect",
+  },
   description: siteData.site_metadata.description,
+  keywords: [
+    "web development Cape Town",
+    "AI agency South Africa",
+    "custom web applications",
+    "AI automation",
+    "chatbots",
+    "Cape Town web design",
+    "AI solutions",
+    "digital agency",
+    "Ignis Intellect",
+  ],
+  authors: [{ name: "Ignis Intellect", url: "https://ignisintellect.com" }],
+  creator: "Ignis Intellect",
+  openGraph: {
+    type: "website",
+    locale: "en_ZA",
+    url: "https://ignisintellect.com",
+    siteName: "Ignis Intellect",
+    title: siteData.site_metadata.title,
+    description: siteData.site_metadata.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteData.site_metadata.title,
+    description: siteData.site_metadata.description,
+    creator: "@itstonyaustin",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://ignisintellect.com",
+  },
 };
 
 export default function RootLayout({

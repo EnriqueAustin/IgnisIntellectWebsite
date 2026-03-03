@@ -62,7 +62,7 @@ export default function Footer() {
                         <ul className="space-y-4 text-slate-400 text-sm">
                             <li><Link href="/about" className="hover:text-accent-orange transition-colors">About Us</Link></li>
                             <li><Link href="/portfolio" className="hover:text-accent-orange transition-colors">Our Portfolio</Link></li>
-                            <li><Link href="#" className="hover:text-accent-orange transition-colors">Careers</Link></li>
+                            <li><Link href="/contact" className="hover:text-accent-orange transition-colors">Careers</Link></li>
                             <li><Link href="/contact" className="hover:text-accent-orange transition-colors">Contact</Link></li>
                         </ul>
                     </div>
@@ -93,8 +93,8 @@ export default function Footer() {
                 <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Ignis Intellect. All rights reserved.</p>
                     <div className="flex gap-8 text-slate-500 text-sm">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="/contact" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="/contact" className="hover:text-white transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>
