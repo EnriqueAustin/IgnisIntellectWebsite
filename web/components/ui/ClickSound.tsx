@@ -26,71 +26,75 @@ export default function ClickSound() {
   }, []);
 
   useEffect(() => {
-    const playThock = () => {
-      const ctx = getCtx();
-      const now = ctx.currentTime;
+    const DELAY_MS = 30; // small delay before the sound fires
 
-      // --- slight random variation ---
-      const pitchVar = 0.9 + Math.random() * 0.2;   // 0.9 – 1.1
-      const gainVar = 0.7 + Math.random() * 0.3;    // 0.7 – 1.0
+    const scheduleThock = () => {
+      setTimeout(() => {
+        const ctx = getCtx();
+        const now = ctx.currentTime;
 
-      // ---- 1. Noise burst (the "clack") ----
-      const bufferLen = Math.floor(ctx.sampleRate * 0.06); // 60 ms
-      const noiseBuffer = ctx.createBuffer(1, bufferLen, ctx.sampleRate);
-      const data = noiseBuffer.getChannelData(0);
-      for (let i = 0; i < bufferLen; i++) {
-        data[i] = (Math.random() * 2 - 1) * (1 - i / bufferLen); // decay envelope baked in
-      }
+        // --- slight random variation ---
+        const pitchVar = 0.95 + Math.random() * 0.1;  // 0.95 – 1.05
+        const gainVar  = 0.5 + Math.random() * 0.2;   // 0.5 – 0.7  (softer)
 
-      const noiseSrc = ctx.createBufferSource();
-      noiseSrc.buffer = noiseBuffer;
+        // ---- 1. Noise burst (the "click") – shorter & higher ----
+        const bufferLen = Math.floor(ctx.sampleRate * 0.025); // 25 ms (was 60)
+        const noiseBuffer = ctx.createBuffer(1, bufferLen, ctx.sampleRate);
+        const data = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferLen; i++) {
+          data[i] = (Math.random() * 2 - 1) * (1 - i / bufferLen);
+        }
 
-      const noiseFilter = ctx.createBiquadFilter();
-      noiseFilter.type = "bandpass";
-      noiseFilter.frequency.value = 3500 * pitchVar;
-      noiseFilter.Q.value = 0.8;
+        const noiseSrc = ctx.createBufferSource();
+        noiseSrc.buffer = noiseBuffer;
 
-      const noiseGain = ctx.createGain();
-      noiseGain.gain.setValueAtTime(0.35 * gainVar, now);
-      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+        const noiseFilter = ctx.createBiquadFilter();
+        noiseFilter.type = "bandpass";
+        noiseFilter.frequency.value = 5500 * pitchVar; // higher centre freq
+        noiseFilter.Q.value = 1.2;
 
-      noiseSrc.connect(noiseFilter);
-      noiseFilter.connect(noiseGain);
-      noiseGain.connect(ctx.destination);
-      noiseSrc.start(now);
-      noiseSrc.stop(now + 0.06);
+        const noiseGain = ctx.createGain();
+        noiseGain.gain.setValueAtTime(0.15 * gainVar, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.025);
 
-      // ---- 2. Low sine "thock" ----
-      const osc = ctx.createOscillator();
-      osc.type = "sine";
-      osc.frequency.value = 120 * pitchVar;
+        noiseSrc.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(ctx.destination);
+        noiseSrc.start(now);
+        noiseSrc.stop(now + 0.025);
 
-      const oscGain = ctx.createGain();
-      oscGain.gain.setValueAtTime(0.45 * gainVar, now);
-      oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        // ---- 2. Subtle mid-tone tap (reduced low-end) ----
+        const osc = ctx.createOscillator();
+        osc.type = "sine";
+        osc.frequency.value = 320 * pitchVar; // was 120 – much less bass
 
-      osc.connect(oscGain);
-      oscGain.connect(ctx.destination);
-      osc.start(now);
-      osc.stop(now + 0.08);
+        const oscGain = ctx.createGain();
+        oscGain.gain.setValueAtTime(0.08 * gainVar, now); // was 0.45 – way quieter
+        oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
 
-      // ---- 3. High-frequency "tick" layer ----
-      const tick = ctx.createOscillator();
-      tick.type = "square";
-      tick.frequency.value = 4000 * pitchVar;
+        osc.connect(oscGain);
+        oscGain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.03);
 
-      const tickGain = ctx.createGain();
-      tickGain.gain.setValueAtTime(0.08 * gainVar, now);
-      tickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.015);
+        // ---- 3. High-frequency "tick" – crisp snap ----
+        const tick = ctx.createOscillator();
+        tick.type = "triangle"; // softer than square
+        tick.frequency.value = 6000 * pitchVar; // higher pitch
 
-      tick.connect(tickGain);
-      tickGain.connect(ctx.destination);
-      tick.start(now);
-      tick.stop(now + 0.015);
+        const tickGain = ctx.createGain();
+        tickGain.gain.setValueAtTime(0.06 * gainVar, now);
+        tickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.01);
+
+        tick.connect(tickGain);
+        tickGain.connect(ctx.destination);
+        tick.start(now);
+        tick.stop(now + 0.01);
+      }, DELAY_MS);
     };
 
-    window.addEventListener("mousedown", playThock);
-    return () => window.removeEventListener("mousedown", playThock);
+    window.addEventListener("mousedown", scheduleThock);
+    return () => window.removeEventListener("mousedown", scheduleThock);
   }, [getCtx]);
 
   return null; // renders nothing — purely behavioural
