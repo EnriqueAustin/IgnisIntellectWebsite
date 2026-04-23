@@ -171,7 +171,7 @@
       "projects": [
         {
           "id": "ignis-lead-gen",
-          "title": "Ignis Lead Gen & Sales Tool Custom",
+          "title": "Ignis Lead Gen & Sales Tool",
           "category": "AI Solutions",
           "tags": ["AI + Lead Gen"],
           "description": "Custom AI-powered lead generation and sales tool.",
@@ -212,14 +212,14 @@
           ]
         },
         {
-          "id": "untold-bookings",
-          "title": "Untold Bookings",
+          "id": "wfh-plumbing",
+          "title": "Wfh Plumbing",
           "category": "Web Development",
           "tags": ["Booking System"],
-          "description": "Custom booking platform.",
-          "alt": "Untold Bookings",
-          "image": "/images/Projects/untoldbookings.png",
-          "link": "https://untoldbookings.netlify.app/",
+          "description": "WFH Plumbing website.",
+          "alt": "Wfh Plumbing",
+          "image": "/images/Projects/wfhplumbing.png",
+          "link": "https://wfhplumbing.co.za/",
           "tech": [
             { "name": "Web", "icon": "language" },
             { "name": "System", "icon": "settings" }

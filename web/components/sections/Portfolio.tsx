@@ -4,7 +4,7 @@ export default function Portfolio() {
     const projects = [
         {
             category: "Lead Gen • AI",
-            title: "Ignis Lead Gen & Sales Tool Custom",
+            title: "Ignis Lead Gen & Sales Tool",
             image: "/images/Projects/ignisleadgen.png",
             alt: "Ignis Lead Gen & Sales Tool",
             link: ""
