@@ -32,6 +32,7 @@ export default function About() {
         },
     ];
 
+    /* --- Team data hidden for now (placeholder) ---
     const team = [
         {
             name: "Enrique Austin",
@@ -48,6 +49,62 @@ export default function About() {
             image: "/noImage.jpg",
             alt: "James Laubscher, Co-Founder and Strategy Lead at Ignis Intellect",
             linkedin: "#",
+        },
+    ];
+    --- end hidden team data --- */
+
+    const disciplines = [
+        {
+            number: "01",
+            icon: "palette",
+            title: "Branding & Identity Systems",
+            description: "Craft a distinctive visual language and brand architecture that sets you apart in crowded markets.",
+        },
+        {
+            number: "02",
+            icon: "query_stats",
+            title: "Digital Strategy & AI Alignment",
+            description: "Define positioning, messaging, and intelligent automation that accelerate growth and engagement.",
+        },
+        {
+            number: "03",
+            icon: "code",
+            title: "Website Design & Development",
+            description: "Build performant, conversion-focused websites and web apps with modern frameworks and clean code.",
+        },
+        {
+            number: "04",
+            icon: "speed",
+            title: "SEO Architecture & Performance",
+            description: "Engineer visibility from the ground up with technical SEO, Core Web Vitals, and data-driven optimisation.",
+        },
+    ];
+
+    const processSteps = [
+        {
+            icon: "search",
+            title: "Brief & Discovery",
+            description: "Clarify objectives, audience, constraints and success measures.",
+        },
+        {
+            icon: "hub",
+            title: "Strategy & Structure",
+            description: "Define positioning, messaging and the system architecture.",
+        },
+        {
+            icon: "draw",
+            title: "Design",
+            description: "Create a clear visual language and usable interface direction.",
+        },
+        {
+            icon: "build",
+            title: "Build & Integrate",
+            description: "Develop the site or system with performance, SEO and reliability in mind.",
+        },
+        {
+            icon: "rocket_launch",
+            title: "Launch & Evolve",
+            description: "Test, deploy and iterate as the brand and market shift.",
         },
     ];
 
@@ -130,49 +187,100 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* Team Section */}
-                <section className="py-24 bg-primary/10">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <div className="text-center mb-20">
-                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Meet the Minds</h2>
-                            <p className="text-slate-400 max-w-2xl mx-auto">
-                                A diverse collective of engineers, designers, and AI researchers working from the heart of the Western Cape.
+                {/* What We Do Section */}
+                <section className="py-24 bg-primary/10 relative overflow-hidden">
+                    {/* Decorative background glow */}
+                    <div className="absolute -top-40 -right-40 w-96 h-96 bg-accent-orange/5 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-orange/5 rounded-full blur-3xl pointer-events-none" />
+
+                    <div className="max-w-7xl mx-auto px-6 relative z-10">
+                        <div className="mb-16 max-w-3xl">
+                            <h2 className="text-accent-orange font-bold uppercase tracking-widest text-sm mb-4">What We Do</h2>
+                            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                                Four disciplines. <span className="text-accent-orange">One</span> commercial objective.
+                            </h3>
+                            <p className="text-slate-400 text-lg leading-relaxed">
+                                We work across the full digital lifecycle — from positioning and messaging through to design systems, development and optimisation. Each discipline supports sustainable market presence, stronger visibility, and a brand that performs consistently across every touchpoint.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                            {team.map((member, index) => (
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {disciplines.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="flex flex-col bg-background-dark rounded-3xl overflow-hidden border border-white/5 shadow-xl group"
+                                    className="group relative p-8 rounded-2xl bg-background-dark/80 border border-white/5 hover:border-accent-orange/30 transition-all duration-500 orange-glow"
                                 >
-                                    <div className="aspect-[4/5] relative overflow-hidden">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                            alt={member.alt}
-                                            src={member.image}
-                                        />
-                                        {member.badge && (
-                                            <div className="absolute bottom-4 left-4 flex gap-2">
-                                                <span className="bg-accent-orange text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
-                                                    {member.badge}
-                                                </span>
+                                    {/* Number watermark */}
+                                    <span className="absolute top-6 right-8 text-7xl font-black text-white/[0.03] group-hover:text-accent-orange/10 transition-colors duration-500 select-none pointer-events-none">
+                                        {item.number}
+                                    </span>
+
+                                    <div className="flex items-start gap-5 relative z-10">
+                                        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent-orange/10 flex items-center justify-center text-accent-orange group-hover:bg-accent-orange group-hover:text-white transition-all duration-300">
+                                            <span className="material-symbols-outlined text-[28px]">{item.icon}</span>
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <span className="text-accent-orange font-mono text-sm font-bold opacity-60">{item.number}.</span>
+                                                <h4 className="text-xl font-bold text-white">{item.title}</h4>
                                             </div>
-                                        )}
-                                    </div>
-                                    <div className="p-6 text-center">
-                                        <h5 className="text-xl font-bold text-white mb-1">{member.name}</h5>
-                                        <p className="text-slate-400 text-sm mb-4">{member.role}</p>
-                                        <div className="flex justify-center gap-4 text-slate-500">
-                                            {member.linkedin && member.linkedin !== "#" && (
-                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-accent-orange transition-colors" aria-label={`${member.name} LinkedIn profile`}>
-                                                    <span className="material-symbols-outlined">link</span>
-                                                </a>
-                                            )}
+                                            <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
                                         </div>
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Our Process Section */}
+                <section className="py-24 bg-background-dark relative overflow-hidden">
+                    {/* Decorative top line */}
+                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-orange/20 to-transparent" />
+
+                    <div className="max-w-7xl mx-auto px-6 relative z-10">
+                        <div className="text-center mb-20">
+                            <h2 className="text-accent-orange font-bold uppercase tracking-widest text-sm mb-4">Our Process</h2>
+                            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                                Structured thinking.
+                            </h3>
+                            <p className="text-3xl md:text-4xl font-bold text-slate-500">
+                                Measurable outcomes.
+                            </p>
+                        </div>
+
+                        {/* Process timeline */}
+                        <div className="relative max-w-4xl mx-auto">
+                            {/* Vertical connector line (desktop) */}
+                            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent-orange/40 via-accent-orange/20 to-transparent" />
+
+                            <div className="space-y-8">
+                                {processSteps.map((step, index) => (
+                                    <div key={index} className="group relative flex items-start gap-8">
+                                        {/* Step indicator */}
+                                        <div className="relative flex-shrink-0 z-10">
+                                            <div className="w-16 h-16 rounded-2xl bg-primary/60 border border-white/10 group-hover:border-accent-orange/40 flex items-center justify-center text-accent-orange group-hover:bg-accent-orange/10 transition-all duration-300">
+                                                <span className="material-symbols-outlined text-[28px]">{step.icon}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Step content */}
+                                        <div className="flex-1 pb-2 pt-2">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <span className="text-accent-orange/40 font-mono text-xs font-bold tracking-widest">
+                                                    STEP {String(index + 1).padStart(2, "0")}
+                                                </span>
+                                            </div>
+                                            <h4 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-accent-orange transition-colors duration-300">
+                                                {step.title}
+                                            </h4>
+                                            <p className="text-slate-400 leading-relaxed">
+                                                {step.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
