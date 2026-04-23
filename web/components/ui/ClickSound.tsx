@@ -26,7 +26,7 @@ export default function ClickSound() {
   }, []);
 
   useEffect(() => {
-    const DELAY_MS = 30; // small delay before the sound fires
+    const DELAY_MS = 250; // small delay before the sound fires
 
     const scheduleThock = () => {
       setTimeout(() => {
