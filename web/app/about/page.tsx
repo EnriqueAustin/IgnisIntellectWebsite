@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import LocationMapWrapper from "@/components/ui/LocationMapWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -320,17 +321,7 @@ export default function About() {
                             </div>
                             <div className="w-full lg:w-1/2">
                                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-primary/10 border border-white/10 relative">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        className="w-full h-full object-cover opacity-60"
-                                        alt="Stylized map showing Cape Town coastline"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvgoyP7BLk7yNgXMlvIIry7DN9oWj0ZvxDb4e7Na1Hm_8L7CtFwuxefwqT3M1SQztxV8sjmcMmBnM14sHSTCTGtSa9RG_hvzfHjNQYz3WI78hcmk_Urha1rzJIdF775hm9n89_fyis3__PIvYU68artwaeXeh-hfNzPCfOYdI0J1A-c6r0X2AZuHlIRRyvnclSnW8Fuu7swpffCWTRaYgBThoR8gn15zwwhf4q9qM7dVEN3f0hQBkVSzjPL5gEWyUZdcIYQDeZT8cR"
-                                    />
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="bg-accent-orange/20 backdrop-blur-sm p-4 rounded-full border border-accent-orange">
-                                            <span className="material-symbols-outlined text-white text-4xl animate-bounce">location_on</span>
-                                        </div>
-                                    </div>
+                                    <LocationMapWrapper />
                                 </div>
                             </div>
                         </div>
