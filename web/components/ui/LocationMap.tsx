@@ -144,7 +144,7 @@ export default function LocationMap() {
     return (
         <div
             ref={mapContainerRef}
-            className="w-full h-full rounded-2xl"
+            className="w-full h-full rounded-2xl relative z-10"
             style={{ minHeight: "100%" }}
         />
     );
