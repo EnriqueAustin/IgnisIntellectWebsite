@@ -27,13 +27,37 @@ export default function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/ignisintellect@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    service: formData.service,
+                    message: formData.message,
+                    _subject: `New Lead: ${formData.service || 'General Inquiry'} from ${formData.name}`,
+                    _template: "table"
+                })
+            });
 
-        console.log("Form submitted:", formData);
-        setIsSubmitting(false);
-        setSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+            if (response.ok) {
+                setSubmitted(true);
+                setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+            } else {
+                console.error("Form submission failed");
+                alert("Something went wrong with the submission. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
