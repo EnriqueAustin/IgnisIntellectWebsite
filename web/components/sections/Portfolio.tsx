@@ -17,11 +17,11 @@ export default function Portfolio() {
             link: "https://ignisdemoglenfinnanguesthouse.netlify.app/"
         },
         {
-            category: "Hospitality • Web",
-            title: "Breathtaking Sea Views",
-            image: "/images/Projects/BreathtakingSeaViews.png",
-            alt: "Breathtaking Sea Views website",
-            link: "https://demoignisdesantavillas.netlify.app/"
+            category: "Travel • Web",
+            title: "Aurora Luxe",
+            image: "/images/Projects/auroraluxe.jpg",
+            alt: "Aurora Luxe website",
+            link: "https://luxtravelsite.netlify.app/"
         },
     ];
 

@@ -30,11 +30,18 @@ export default function Services() {
             <Navbar />
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary px-4 pt-20">
-                    <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-                        <div className="absolute top-0 -left-1/4 w-[500px] h-[500px] bg-accent-orange/20 rounded-full blur-[120px]" />
-                        <div className="absolute bottom-0 -right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]" />
-                    </div>
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 pt-20">
+                    {/* Background Video */}
+                    <video
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        src="/videos/background-videos/Mesh.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-primary/75 z-[1]" />
                     <div className="relative z-10 max-w-4xl text-center">
                         <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
                             Our Services –{" "}

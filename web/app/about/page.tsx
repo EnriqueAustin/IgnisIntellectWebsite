@@ -114,10 +114,18 @@ export default function About() {
             <Navbar />
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative py-20 overflow-hidden fiery-gradient">
-                    <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-                        <div className="absolute inset-0 bg-gradient-to-l from-accent-orange to-transparent" />
-                    </div>
+                <section className="relative py-20 overflow-hidden">
+                    {/* Background Video */}
+                    <video
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        src="/videos/background-videos/WordsEffects.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-primary/75 z-[1]" />
                     <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
                         <div className="flex flex-col md:flex-row items-center gap-12">
                             <div className="flex-1 space-y-6">
