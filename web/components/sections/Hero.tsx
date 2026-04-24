@@ -9,12 +9,20 @@ export default function Hero() {
             {/* Background Graphic */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent z-10" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                {/* <img
                     alt="Abstract AI visualization with fiery energy pulses"
                     className="w-full h-full object-cover opacity-40"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCddICVxHCGMcYPbBhhj0zTaNJg7kcrsB7ftP3gxXSR3EQ1TTsm2QGndMPNb4RAzG7DhZW-0akSeut1T4zwzirx-NeD4CHaIheJFzwjX2mMl2wgmrNlmgWyrVJhlvj_qpUPTSfx-xMcZySxw6yW80v62_4ayzUmg6zX4N_5KpaCtOhKgnnGck30xrTz2is8ry57U82HsUkyPt3bDOMAXOczoSx16x97XKg4tOh08iT6hEBQYyzbOewqE4fT2rS7TiHEGtC-KiYsVBhz"
-                />
+                /> */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-40"
+                >
+                    <source src="/videos/hero-video-background.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background-dark to-transparent z-10" />
                 <div className="hero-glow absolute inset-0" />
             </div>

@@ -84,7 +84,7 @@ export const servicesData: ServiceDetail[] = [
         pricing: [
             {
                 name: "Starter",
-                price: "R4,999",
+                price: "R9,999",
                 description: "Perfect for startups & freelancers needing a professional online presence.",
                 features: [
                     "Landing page (1–3 pages)",

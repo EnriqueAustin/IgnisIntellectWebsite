@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import siteData from "@/data/site.json";
+import ClickSound from "@/components/ui/ClickSound";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -76,6 +77,7 @@ export default function RootLayout({
         poppins.variable,
         "min-h-screen bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
       )}>
+        <ClickSound />
         {children}
       </body>
     </html>

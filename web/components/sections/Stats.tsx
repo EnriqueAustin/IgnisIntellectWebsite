@@ -1,7 +1,7 @@
 export default function Stats() {
     const stats = [
-        { value: "10+", label: "Years Experience", highlight: false },
-        { value: "50+", label: "Projects Delivered", highlight: true },
+        { value: "3+", label: "Years Experience", highlight: false },
+        { value: "15+", label: "Projects Delivered", highlight: true },
         { value: "98%", label: "AI-Enhanced Efficiency", highlight: false },
         { value: "CPT", label: "Cape Town Based", highlight: false },
     ];

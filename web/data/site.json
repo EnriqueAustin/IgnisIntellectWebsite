@@ -73,11 +73,11 @@
       "stats": [
         {
           "label": "Years Experience",
-          "value": "10+"
+          "value": "5+"
         },
         {
           "label": "Projects Delivered",
-          "value": "50+"
+          "value": "15+"
         },
         {
           "label": "Efficiency Boost",
@@ -170,160 +170,94 @@
       ],
       "projects": [
         {
-          "id": "nexus-core",
-          "title": "Nexus Core Analytics",
+          "id": "ignis-lead-gen",
+          "title": "Ignis Lead Gen & Sales Tool",
           "category": "AI Solutions",
-          "tags": [
-            "AI + Fintech"
-          ],
-          "description": "High-performance data visualization and predictive modeling for financial markets. Real-time processing of millions of data points.",
-          "alt": "Nexus Core Analytics AI-powered fintech data visualization dashboard",
-          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuArRfiQM9RotT_ABHc0Jm7j71qutvhuTdhgJM34WaRUh2mrm8X02b8EPEgCrj6t2faljrbqrnhUSBYDkKG7A6qWJcAS6Fk5SeCs9GKjUv0MOpDzBYRGK8P44Ts8VP8ErvymnhhIwd2Kz9q5-2EmiX6TIc2IsQSbYrszt9CuNY3HV3Q58a2Uxh6YnhuxOykxDhHppENuir6bm1M2PMzx-0y1Z6PqS9gp0Yh2sKW__eBzgP4nF5YOW85EkaR4FPH7cCDrrVI5io1DM5BR",
+          "tags": ["AI + Lead Gen"],
+          "description": "Custom AI-powered lead generation and sales tool.",
+          "alt": "Ignis Lead Gen & Sales Tool",
+          "image": "/images/Projects/ignisleadgen.png",
+          "link": "",
           "tech": [
-            {
-              "name": "React",
-              "icon": "code"
-            },
-            {
-              "name": "Python",
-              "icon": "database"
-            },
-            {
-              "name": "AWS",
-              "icon": "cloud"
-            }
+            { "name": "AI", "icon": "psychology" },
+            { "name": "Automation", "icon": "smart_toy" }
           ]
         },
         {
-          "id": "vantage-market",
-          "title": "Vantage Market UI",
+          "id": "boutique-lagoon",
+          "title": "Boutique Lagoon Escape",
           "category": "Web Development",
-          "tags": [
-            "E-commerce + Web"
-          ],
-          "description": "A lightning-fast shopping experience with seamless checkout and dynamic inventory systems. Optimized for 99.9% uptime.",
-          "alt": "Vantage Market e-commerce platform interface with modern product listing design",
-          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC6IHyrqWOVPIQggtr7QiML7H7rE4CCD_Hd3IXsFVtmnBIwVxmqYr5cOrEfiIAnOqrt4wwL-fbhW44PpCg4a2y-yF7HJ-DInqbP6OootG-DVdbTdO-LubYIw90pPDBurr91cHJn-rTTEkPqu1dzIjcdMM0VFR9u7jvgV4nwpE6HI1bk-xCXgCK257wc_cg0ZdD9iUiitC2sCUSauH5lKQSvmNciHDdyznE7nedzKn5jOC28P_ceWTjy7fIxdDu3neB3NF3zSmchpGM4",
+          "tags": ["Hospitality"],
+          "description": "A beautiful website for a boutique lagoon escape guest house.",
+          "alt": "Boutique Lagoon Escape website",
+          "image": "/images/Projects/BoutiqueLagoonEscape.png",
+          "link": "https://ignisdemoglenfinnanguesthouse.netlify.app/",
           "tech": [
-            {
-              "name": "Next.js",
-              "icon": "javascript"
-            },
-            {
-              "name": "Stripe",
-              "icon": "payments"
-            },
-            {
-              "name": "Node.js",
-              "icon": "settings_ethernet"
-            }
+            { "name": "Web", "icon": "language" },
+            { "name": "Design", "icon": "palette" }
           ]
         },
         {
-          "id": "ignis-guard",
-          "title": "Ignis Guard Security",
+          "id": "sea-views",
+          "title": "Breathtaking Sea Views",
+          "category": "Web Development",
+          "tags": ["Hospitality"],
+          "description": "Stunning website for sea view villas.",
+          "alt": "Breathtaking Sea Views website",
+          "image": "/images/Projects/BreathtakingSeaViews.png",
+          "link": "https://demoignisdesantavillas.netlify.app/",
+          "tech": [
+            { "name": "Web", "icon": "language" },
+            { "name": "Design", "icon": "palette" }
+          ]
+        },
+        {
+          "id": "wfh-plumbing",
+          "title": "Wfh Plumbing",
+          "category": "Web Development",
+          "tags": ["Booking System"],
+          "description": "WFH Plumbing website.",
+          "alt": "Wfh Plumbing",
+          "image": "/images/Projects/wfhplumbing.png",
+          "link": "https://wfhplumbing.co.za/",
+          "tech": [
+            { "name": "Web", "icon": "language" },
+            { "name": "System", "icon": "settings" }
+          ]
+        },
+        {
+          "id": "chatio",
+          "title": "Chatio.io AI Chatbot Platform",
           "category": "AI Solutions",
-          "tags": [
-            "SaaS + Automation"
-          ],
-          "description": "Enterprise-level threat detection system utilizing automated response protocols and real-time monitoring.",
-          "alt": "Ignis Guard cybersecurity threat detection and real-time monitoring dashboard",
-          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAglxVHatevcOwJGm1SONqd1jcMt5fnMtmgWPswFbb-0iF0glQ8A6UazEiFoa6Z6iqjwNR3zILOmyPdZbm3WwhmyCU2VlWA5S8b_-aXZjohy44OH54fvXEXX6QdNafKiDYo3b3oi4nqDLo_8sbjlLAvyIhcvUadIwmVtXpccElcaiDOzSGtyq_sr73KCaD2w23j-pqix7zI0jAwGM9cIW2HJ7RqM2SbbwhG-XyTXw43y2UmBlyt8B28wcOjmJGjvs_vRqMm4dZaylmP",
+          "tags": ["AI Chatbot"],
+          "description": "AI chatbot platform site.",
+          "alt": "Chatio.io",
+          "image": "/images/Projects/chatio.png",
+          "link": "",
           "tech": [
-            {
-              "name": "Kubernetes",
-              "icon": "hub"
-            },
-            {
-              "name": "Security",
-              "icon": "security"
-            },
-            {
-              "name": "GoLang",
-              "icon": "terminal"
-            }
+            { "name": "AI", "icon": "psychology" },
+            { "name": "Chat", "icon": "chat" }
           ]
         },
         {
-          "id": "pulse-health",
-          "title": "Pulse Health App",
-          "category": "Mobile Apps",
-          "tags": [
-            "Mobile + AI"
-          ],
-          "description": "AI-driven personal wellness assistant that analyzes biometrics to provide personalized health insights and coaching.",
-          "alt": "Pulse Health mobile wellness app with AI-driven biometric tracking interface",
-          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtnzdUVZ_Xj6Q2vHxvyJviA7vJzX6CWOl6WoOlaluRJhSd2l4FR8b1rJDVBhAS9f13L7kG5I8YwVmmqMIJqJ0tirMMOwS1vNY4PEF6F7bd5VnHtY6gVqj4Y6GFmIjF3shwqYGv7khCyBCa_TXJIzY3IaygjuwddZyyqD1bLizSAbcz-e9g6QZD6AbYt4WRZuYRSk7GNm8gzDojJzT3Kll8HXmNbUuo0F-aPJu0VOYuTGcIMM7fiID_OmUWOJRiFjU4acynBDig65GN",
-          "tech": [
-            {
-              "name": "Mobile",
-              "icon": "phone_iphone"
-            },
-            {
-              "name": "AI",
-              "icon": "psychology"
-            },
-            {
-              "name": "Metrics",
-              "icon": "monitoring"
-            }
-          ]
-        },
-        {
-          "id": "solaris-energy",
-          "title": "Solaris Energy Portal",
+          "id": "aurora-luxe",
+          "title": "Aurora Luxe",
           "category": "Web Development",
-          "tags": [
-            "Enterprise Web"
-          ],
-          "description": "A comprehensive management portal for renewable energy providers, tracking performance across multiple power grids.",
-          "alt": "Solaris Energy enterprise portal for renewable energy grid performance management",
-          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAG6sqU-FgXijK4zVUOnif0L66AaypI51yXkD8O-ErOKh2Hyi_ag4wq3N26mAqHO53z91VEy6K2hyKe-_8p4uPH3cOxpR8NcDFfD2HmPtHskzmsevkX1RRy6js_ZS2kQ-7by9CgHBki6xd0MgtXouHUE94GjLV6wLhJTo4CderzxMIU-DWIEul6HGIs6fm5lebIkqstXWq_TgrKQDYgBDuEHXbWYGMJKy_Z8q86W_Sjig6QnoiK3earGqULseBHRYjF4RWUjVjz1dpX",
+          "tags": ["Travel"],
+          "description": "Luxury travel website.",
+          "alt": "Aurora Luxe website",
+          "image": "/images/Projects/auroraluxe.jpg",
+          "link": "https://luxtravelsite.netlify.app/",
           "tech": [
-            {
-              "name": "Enterprise",
-              "icon": "domain"
-            },
-            {
-              "name": "Solar",
-              "icon": "solar_power"
-            },
-            {
-              "name": "Data",
-              "icon": "grid_view"
-            }
-          ]
-        },
-        {
-          "id": "aura-fashion",
-          "title": "Aura Fashion AR",
-          "category": "Mobile Apps",
-          "tags": [
-            "Mobile + Retail"
-          ],
-          "description": "Innovative retail application featuring virtual try-on technology and personalized style recommendations using computer vision.",
-          "alt": "Aura Fashion augmented reality virtual try-on retail mobile application",
-          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDgQlkYmpVVVm-fCXDIymaP4DoyW_IteqaGiUftvjdayHimDEJSup2eU0VLX_d4OJTFJoq8mBEq1SgDu-LujzesnaTwmydwmHQPFoz9Ne70HgtfT5EqdoH8PlRfOlJ8JMmNM5-6Zyhwsra0keOMwItwX7BMHL0hp2IT1n3sOr0xsJuR4luVFS3PRpzeDI0mtNhjsQZ7pnA3M82jTglZC7DOkBAl5Voe3VeWEnxQcO2w2i6pPSUKya68VQlQQIf0fiopyu28I9wClcXk",
-          "tech": [
-            {
-              "name": "AR",
-              "icon": "view_in_ar"
-            },
-            {
-              "name": "Retail",
-              "icon": "checkroom"
-            },
-            {
-              "name": "Vision",
-              "icon": "camera"
-            }
+            { "name": "Web", "icon": "language" },
+            { "name": "Travel", "icon": "flight" }
           ]
         }
       ]
     },
     "contact": {
       "address": "Saldanha / Cape Town, South Africa",
-      "email": "hello@ignisintellect.com",
+      "email": "ignisintellect@gmail.com",
       "phone": "+27 12 345 6789",
       "socials": {
         "linkedin": "https://linkedin.com/company/ignisintellect",

@@ -109,9 +109,15 @@ export default function Portfolio() {
                                         ))}
                                     </div>
 
-                                    <button className="w-full rounded-lg bg-white/5 py-3 text-sm font-bold text-white transition-all hover:bg-accent-orange group-hover:bg-accent-orange">
-                                        View Case Study
-                                    </button>
+                                    {project.link ? (
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="block text-center w-full rounded-lg bg-white/5 py-3 text-sm font-bold text-white transition-all hover:bg-accent-orange group-hover:bg-accent-orange">
+                                            Visit Website
+                                        </a>
+                                    ) : (
+                                        <button className="w-full rounded-lg bg-white/5 py-3 text-sm font-bold text-white transition-all hover:bg-accent-orange group-hover:bg-accent-orange">
+                                            View Case Study
+                                        </button>
+                                    )}
                                 </div>
                             </article>
                         ))}

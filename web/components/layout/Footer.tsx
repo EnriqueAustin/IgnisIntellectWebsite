@@ -5,11 +5,42 @@ import Link from "next/link";
 
 export default function Footer() {
     const [email, setEmail] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
-    const handleNewsletterSubmit = (e: React.FormEvent) => {
+    const handleNewsletterSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Newsletter signup:", email);
-        setEmail("");
+        if (!email) return;
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/4ebee7d620a84e1c58de4ee43fa95702", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    _subject: `New Newsletter Subscriber: ${email}`,
+                    _template: "table"
+                })
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+                setEmail("");
+                setTimeout(() => setSubmitted(false), 3000);
+            } else {
+                console.error("Newsletter submission failed");
+                alert("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting newsletter:", error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -81,9 +112,16 @@ export default function Footer() {
                             />
                             <button
                                 type="submit"
-                                className="bg-accent-orange text-white p-2 rounded-lg hover:bg-accent-fire transition-colors"
+                                disabled={isSubmitting}
+                                className="bg-accent-orange text-white p-2 rounded-lg hover:bg-accent-fire transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center min-w-[40px]"
                             >
-                                <span className="material-symbols-outlined">send</span>
+                                {isSubmitting ? (
+                                    <span className="material-symbols-outlined animate-spin">refresh</span>
+                                ) : submitted ? (
+                                    <span className="material-symbols-outlined">check</span>
+                                ) : (
+                                    <span className="material-symbols-outlined">send</span>
+                                )}
                             </button>
                         </form>
                     </div>
