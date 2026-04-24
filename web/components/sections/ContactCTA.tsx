@@ -62,8 +62,8 @@ export default function ContactCTA() {
                         <div className="flex flex-col gap-4">
                             <div className="flex items-center gap-4 text-slate-300">
                                 <span className="material-symbols-outlined text-accent-orange">mail</span>
-                                <a href="mailto:hello@ignisintellect.com" className="hover:text-accent-orange transition-colors">
-                                    hello@ignisintellect.com
+                                <a href="mailto:ignisintellect@gmail.com" className="hover:text-accent-orange transition-colors">
+                                    ignisintellect@gmail.com
                                 </a>
                             </div>
                             <div className="flex items-center gap-4 text-slate-300">
