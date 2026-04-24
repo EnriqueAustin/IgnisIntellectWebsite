@@ -21,12 +21,17 @@ export default function Portfolio() {
             <main className="flex-grow">
                 {/* Hero Section */}
                 <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
-                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-background-dark to-background-dark"></div>
-                    {/* Background Image Pattern */}
-                    <div
-                        className="absolute top-0 left-0 h-full w-full opacity-10 bg-cover bg-center pointer-events-none"
-                        style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOOE74MSsSUfy7cQO02qWx6yoYgcy4AgM3M16gTjXBHd1UZHCZnraDESJ905LrXadZcsIFm6_LkpCWPhKa5rpSJiU67i_TeabJQUZBIVmHgfU80jner5YLsko0P_jh40dc4qJWjsN2ustW4vcwFhSzQ0wD5CveNVpUI-M6au7S3eNRC5409LbG7TqN4385pDOq2F5tcE4_HcPwLtLH2A5_Hs-PVUtFTsHftG-QDZ_ZOu-J_gYLIxXq8gXJL9eydyqgiEIZaZgiw6gf')" }}
-                    ></div>
+                    {/* Background Video */}
+                    <video
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        src="/videos/background-videos/SmokeRed.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-background-dark/80 z-[1]" />
 
                     <div className="max-w-3xl space-y-6 relative z-10">
                         <div className="inline-flex items-center rounded-full border border-accent-orange/30 bg-accent-orange/5 px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent-orange">

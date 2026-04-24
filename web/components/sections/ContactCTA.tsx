@@ -45,9 +45,18 @@ export default function ContactCTA() {
 
     return (
         <section className="py-24 relative overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 bg-primary z-0" />
-            <div className="absolute right-0 top-0 w-1/3 h-full orange-gradient opacity-10 blur-[100px] rounded-full" />
+            {/* Background Video */}
+            <video
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                src="/videos/background-videos/StructureNeon.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-primary/70 z-[1]" />
+            <div className="absolute right-0 top-0 w-1/3 h-full orange-gradient opacity-10 blur-[100px] rounded-full z-[1]" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
