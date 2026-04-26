@@ -4,7 +4,10 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import siteData from "@/data/site.json";
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 export default function Portfolio() {
     const { categories, projects } = siteData.pages.portfolio;
@@ -15,20 +18,16 @@ export default function Portfolio() {
         : projects.filter(project => project.category === activeCategory);
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+        <div className="flex flex-col min-h-screen">
             <Navbar />
 
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
-                    {/* Background Video */}
-                    <video
-                        className="absolute inset-0 w-full h-full object-cover z-0"
+                <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 pt-32 pb-20 text-center">
+                    <BackgroundVideo
                         src="/videos/background-videos/SmokeRed.mp4"
+                        poster="/videos/posters/SmokeRed.jpg"
                         autoPlay
-                        loop
-                        muted
-                        playsInline
                     />
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-background-dark/80 z-[1]" />
@@ -84,10 +83,12 @@ export default function Portfolio() {
                             >
                                 {/* Image Container */}
                                 <div className="relative aspect-[16/10] overflow-hidden">
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.alt || project.title}
-                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute top-4 left-4 rounded-lg bg-accent-orange px-3 py-1 text-xs font-bold text-white shadow-lg">
                                         {project.tags[0]}
@@ -114,15 +115,15 @@ export default function Portfolio() {
                                         ))}
                                     </div>
 
-                                    {project.link ? (
+                                    {project.link?.startsWith("/") ? (
+                                        <Link href={project.link} className="block text-center w-full rounded-lg bg-white/5 py-3 text-sm font-bold text-white transition-all hover:bg-accent-orange group-hover:bg-accent-orange">
+                                            View Project
+                                        </Link>
+                                    ) : project.link ? (
                                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="block text-center w-full rounded-lg bg-white/5 py-3 text-sm font-bold text-white transition-all hover:bg-accent-orange group-hover:bg-accent-orange">
                                             Visit Website
                                         </a>
-                                    ) : (
-                                        <button className="w-full rounded-lg bg-white/5 py-3 text-sm font-bold text-white transition-all hover:bg-accent-orange group-hover:bg-accent-orange">
-                                            View Case Study
-                                        </button>
-                                    )}
+                                    ) : null}
                                 </div>
                             </article>
                         ))}
@@ -138,10 +139,13 @@ export default function Portfolio() {
                             <p className="mx-auto max-w-xl text-lg text-white/80">
                                 Let's collaborate to build something extraordinary. Our team is ready to bring your vision to life with bleeding-edge technology.
                             </p>
-                            <button className="mx-auto flex h-14 items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-bold text-primary transition-all hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl">
+                            <Link
+                                href="/contact"
+                                className="mx-auto inline-flex h-14 items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-bold text-primary transition-all hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl"
+                            >
                                 Get in Touch
                                 <span className="material-symbols-outlined text-primary">mail</span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </section>

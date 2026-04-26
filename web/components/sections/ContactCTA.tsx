@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 export default function ContactCTA() {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [honeypot, setHoneypot] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (honeypot) return; // bot trap
         setIsSubmitting(true);
 
         try {
@@ -23,7 +26,9 @@ export default function ContactCTA() {
                     email: formData.email,
                     message: formData.message,
                     _subject: `New Lead from Home Page: ${formData.name}`,
-                    _template: "table"
+                    _template: "table",
+                    _captcha: "false",
+                    _honey: ""
                 })
             });
 
@@ -45,14 +50,10 @@ export default function ContactCTA() {
 
     return (
         <section className="py-24 relative overflow-hidden">
-            {/* Background Video */}
-            <video
-                className="absolute inset-0 w-full h-full object-cover z-0"
+            <BackgroundVideo
                 src="/videos/background-videos/StructureNeon.mp4"
+                poster="/videos/posters/StructureNeon.jpg"
                 autoPlay
-                loop
-                muted
-                playsInline
             />
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-primary/70 z-[1]" />
@@ -85,6 +86,17 @@ export default function ContactCTA() {
                     {/* Right - Contact Form */}
                     <div className="bg-background-dark p-8 md:p-12 rounded-2xl border border-white/10 shadow-2xl">
                         <form className="space-y-6" onSubmit={handleSubmit}>
+                            {/* Honeypot — must stay empty */}
+                            <input
+                                type="text"
+                                name="_honey"
+                                tabIndex={-1}
+                                autoComplete="off"
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                                style={{ position: "absolute", left: "-9999px", width: 0, height: 0, opacity: 0 }}
+                                aria-hidden="true"
+                            />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-bold text-slate-400 mb-2">Name</label>

@@ -4,6 +4,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useState } from "react";
 import siteData from "@/data/site.json";
+import { servicesData } from "@/data/servicesData";
+import LocationMapWrapper from "@/components/ui/LocationMapWrapper";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 export default function Contact() {
     // We'll use local state for the form since we're not actually submitting to a backend yet
@@ -17,6 +20,7 @@ export default function Contact() {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [honeypot, setHoneypot] = useState("");
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -25,6 +29,7 @@ export default function Contact() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (honeypot) return; // bot trap
         setIsSubmitting(true);
 
         try {
@@ -41,7 +46,9 @@ export default function Contact() {
                     service: formData.service,
                     message: formData.message,
                     _subject: `New Lead: ${formData.service || 'General Inquiry'} from ${formData.name}`,
-                    _template: "table"
+                    _template: "table",
+                    _captcha: "false",
+                    _honey: ""
                 })
             });
 
@@ -61,32 +68,41 @@ export default function Contact() {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+        <div className="flex flex-col min-h-screen">
             <Navbar />
 
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative pt-32 pb-20 overflow-hidden bg-background-dark">
-                    <div className="absolute inset-0 hero-glow"></div>
-                    <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-orange rounded-full blur-[120px]"></div>
-                        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary rounded-full blur-[100px]"></div>
-                    </div>
-                    <div className="relative max-w-7xl mx-auto px-6 text-center">
-                        <h1 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight mb-6">
-                            Get in Touch – <br />
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 pt-32">
+                    <BackgroundVideo
+                        src="/videos/background-videos/StructureNeon.mp4"
+                        poster="/videos/posters/StructureNeon.jpg"
+                        autoPlay
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-primary/75 z-[1]" />
+                    <div className="relative z-10 max-w-4xl mx-auto px-6 text-center py-20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/10 border border-accent-orange/20 text-accent-orange text-xs font-bold uppercase tracking-widest mb-6">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-orange opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-orange" />
+                            </span>
+                            Let&apos;s Build Together
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+                            Get in Touch –{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-orange to-orange-400">
-                                Let's Ignite Your Project.
+                                Ignite Your Project.
                             </span>
                         </h1>
-                        <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                            Ready to transform your digital presence with AI-driven web solutions? Our team of experts is standing by in Cape Town to bring your vision to life.
+                        <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                            Ready to transform your digital presence with AI-driven web solutions? Our team is based in Vredenburg on the West Coast and at the V&amp;A Waterfront in Cape Town, ready to bring your vision to life.
                         </p>
                     </div>
                 </section>
 
                 {/* Main Contact Section */}
-                <section className="py-20 relative bg-background-light dark:bg-background-dark">
+                <section className="py-20 relative bg-background-dark">
                     <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
 
                         {/* Left Column: Contact Details */}
@@ -104,10 +120,11 @@ export default function Contact() {
                                         <span className="material-symbols-outlined">location_on</span>
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-white mb-1">Our Location</h4>
+                                        <h4 className="text-lg font-bold text-white mb-1">Our Locations</h4>
                                         <p className="text-slate-400 leading-relaxed">
-                                            V&A Waterfront, Pierhead District<br />
-                                            Cape Town, 8001, South Africa
+                                            Vredenburg, West Coast<br />
+                                            V&A Waterfront, Cape Town<br />
+                                            Western Cape, South Africa
                                         </p>
                                     </div>
                                 </div>
@@ -138,11 +155,8 @@ export default function Contact() {
                             <div className="pt-8">
                                 <h4 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6">Follow Our Journey</h4>
                                 <div className="flex gap-4">
-                                    <a href={siteData.pages.contact.socials.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent-orange transition-all border border-white/5" aria-label="LinkedIn">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                                    </a>
-                                    <a href={"#"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent-orange transition-all border border-white/5" aria-label="X (Twitter)">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                                    <a href={siteData.pages.contact.socials.instagram} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-primary/40 flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent-orange transition-all border border-white/5" aria-label="Instagram">
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.975 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.975-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0 1.838c-3.155 0-3.508.012-4.747.068-.957.044-1.504.207-1.857.344-.466.181-.8.398-1.15.748-.35.35-.567.683-.748 1.15-.137.353-.3.9-.344 1.857C3.012 8.492 3 8.845 3 12s.012 3.508.068 4.747c.044.957.207 1.504.344 1.857.181.466.398.8.748 1.15.35.35.683.567 1.15.748.353.137.9.3 1.857.344 1.239.056 1.592.068 4.747.068s3.508-.012 4.747-.068c.957-.044 1.504-.207 1.857-.344.466-.181.8-.398 1.15-.748.35-.35.567-.683.748-1.15.137-.353.3-.9.344-1.857.056-1.239.068-1.592.068-4.747s-.012-3.508-.068-4.747c-.044-.957-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.097 3.097 0 0 0-1.15-.748c-.353-.137-.9-.3-1.857-.344C15.508 4.012 15.155 4 12 4zm0 3.838a4.162 4.162 0 1 1 0 8.324 4.162 4.162 0 0 1 0-8.324zm0 6.862a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4zm5.292-7.038a.972.972 0 1 1-1.944 0 .972.972 0 0 1 1.944 0z"></path></svg>
                                     </a>
                                 </div>
                             </div>
@@ -169,6 +183,17 @@ export default function Contact() {
                                     </div>
                                 ) : (
                                     <form onSubmit={handleSubmit} className="space-y-6">
+                                        {/* Honeypot — must stay empty */}
+                                        <input
+                                            type="text"
+                                            name="_honey"
+                                            tabIndex={-1}
+                                            autoComplete="off"
+                                            value={honeypot}
+                                            onChange={(e) => setHoneypot(e.target.value)}
+                                            style={{ position: "absolute", left: "-9999px", width: 0, height: 0, opacity: 0 }}
+                                            aria-hidden="true"
+                                        />
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-medium text-slate-300">Full Name</label>
@@ -217,10 +242,10 @@ export default function Contact() {
                                                     className="w-full bg-background-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-orange transition-all appearance-none cursor-pointer"
                                                 >
                                                     <option value="" disabled>Select a Service</option>
-                                                    <option value="ai-dev">AI Development</option>
-                                                    <option value="web-dev">Web Development</option>
-                                                    <option value="uiux">UI/UX Design</option>
-                                                    <option value="consulting">Tech Consulting</option>
+                                                    {servicesData.map((s) => (
+                                                        <option key={s.slug} value={s.slug}>{s.title}</option>
+                                                    ))}
+                                                    <option value="other">Other / Not Sure</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -258,24 +283,24 @@ export default function Contact() {
 
                 {/* Map Section */}
                 <section className="relative h-[450px] w-full bg-background-dark">
-                    <div className="absolute inset-0 grayscale opacity-40 hover:opacity-70 transition-opacity">
-                        {/* We use a simple image for the map background as per user design */}
-                        <img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL5b4g6vpXr9s2Q-yTqrqjaeKlVpOcw-wcQ6qQKy2rw4Rr5-OYXtt7B2zMujyVvpIyDwtlMxtPVfiQ4XIvBVZb_qrTHuqvPTBxp7G1Ut183IAGma5bVHZlfOBzTjEXlipXk8YwZjpwwlYQ6NukwPZ_LjRj4RXPtIXP9MfuxH6paI871R3eRctXDU49dOf5Kq_JesH1lILtzeg_sdOA74af3E8A4qenl5noPZkPomq28UEGJmaskiUID35d3pqY93mSpVJc3LLTyIw7"
-                            alt="Dark themed map of Cape Town showing V&A Waterfront"
-                            className="w-full h-full object-cover"
-                        />
+                    <div className="absolute inset-0">
+                        <LocationMapWrapper />
                     </div>
 
-                    <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center">
-                        <div className="bg-primary/90 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-2xl max-w-xs">
+                    <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center pointer-events-none">
+                        <div className="bg-primary/90 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-2xl max-w-xs pointer-events-auto">
                             <h5 className="font-bold text-white mb-2 flex items-center gap-2">
                                 <span className="material-symbols-outlined text-accent-orange text-sm">rocket_launch</span>
                                 Ignis HQ
                             </h5>
                             <p className="text-sm text-slate-300">Visit us at the heart of the Waterfront innovation hub.</p>
                             <div className="mt-4 pt-4 border-t border-white/10">
-                                <a href="#" className="text-accent-orange text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=V%26A+Waterfront+Cape+Town"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent-orange text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                                >
                                     Get Directions <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                 </a>
                             </div>

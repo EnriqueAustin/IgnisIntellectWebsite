@@ -3,11 +3,20 @@ import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { servicesData } from "@/data/servicesData";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 export const metadata: Metadata = {
-    title: "Services - Ignis Intellect",
+    title: "Services — Web Development & AI Automation",
     description:
-        "Bridging the gap between imagination and technical execution with high-performance digital products that scale.",
+        "Custom web development, AI automation, design, audits, and consulting from Ignis Intellect — a Cape Town & West Coast agency building high-performance digital products that scale.",
+    alternates: { canonical: "https://ignisintellect.com/services" },
+    openGraph: {
+        title: "Services — Ignis Intellect",
+        description:
+            "Web development, AI automation, design & creative, consulting, audits, and ongoing support — tailored to your business.",
+        url: "https://ignisintellect.com/services",
+        type: "website",
+    },
 };
 
 function ServiceImage({ src, alt }: { src: string; alt: string }) {
@@ -30,19 +39,22 @@ export default function Services() {
             <Navbar />
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 pt-20">
-                    {/* Background Video */}
-                    <video
-                        className="absolute inset-0 w-full h-full object-cover z-0"
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 pt-32 pb-20">
+                    <BackgroundVideo
                         src="/videos/background-videos/Mesh.mp4"
+                        poster="/videos/posters/Mesh.jpg"
                         autoPlay
-                        loop
-                        muted
-                        playsInline
                     />
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-primary/75 z-[1]" />
                     <div className="relative z-10 max-w-4xl text-center">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/10 border border-accent-orange/20 text-accent-orange text-xs font-bold uppercase tracking-widest mb-6">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-orange opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-orange" />
+                            </span>
+                            What We Do
+                        </div>
                         <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
                             Our Services –{" "}
                             <span className="text-accent-orange text-glow">

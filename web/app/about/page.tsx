@@ -2,11 +2,21 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import LocationMapWrapper from "@/components/ui/LocationMapWrapper";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | Ignis Intellect",
-    description: "Founded in Cape Town, we blend fiery innovation with intellectual AI expertise to build transformative digital solutions.",
+    title: "About Us — Cape Town & West Coast Web & AI Agency",
+    description:
+        "Founded in Saldanha and serving Cape Town and the West Coast, Ignis Intellect blends fiery innovation with AI expertise to build transformative web and AI solutions for South African businesses.",
+    alternates: { canonical: "https://ignisintellect.com/about" },
+    openGraph: {
+        title: "About Ignis Intellect — Cape Town & West Coast",
+        description:
+            "Meet the team behind Ignis Intellect: a Cape Town & West Coast web development and AI agency helping South African businesses scale with intelligent technology.",
+        url: "https://ignisintellect.com/about",
+        type: "website",
+    },
 };
 
 export default function About() {
@@ -114,60 +124,45 @@ export default function About() {
             <Navbar />
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative py-20 overflow-hidden">
-                    {/* Background Video */}
-                    <video
-                        className="absolute inset-0 w-full h-full object-cover z-0"
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 pt-32">
+                    <BackgroundVideo
                         src="/videos/background-videos/WordsEffects.mp4"
+                        poster="/videos/posters/WordsEffects.jpg"
                         autoPlay
-                        loop
-                        muted
-                        playsInline
                     />
                     {/* Dark overlay */}
                     <div className="absolute inset-0 bg-primary/75 z-[1]" />
-                    <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
-                        <div className="flex flex-col md:flex-row items-center gap-12">
-                            <div className="flex-1 space-y-6">
-                                {/* Badge */}
-                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/10 border border-accent-orange/20 text-accent-orange text-xs font-bold uppercase tracking-widest">
-                                    <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-orange opacity-75" />
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-orange" />
-                                    </span>
-                                    Cape Town&apos;s AI Innovators
-                                </div>
+                    <div className="relative z-10 max-w-4xl mx-auto px-6 text-center py-20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/10 border border-accent-orange/20 text-accent-orange text-xs font-bold uppercase tracking-widest mb-6">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-orange opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-orange" />
+                            </span>
+                            Cape Town&apos;s AI Innovators
+                        </div>
 
-                                <h1 className="text-5xl md:text-7xl font-black text-white leading-tight">
-                                    About <span className="text-accent-orange">Ignis</span> Intellect
-                                </h1>
+                        <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+                            About <span className="text-accent-orange">Ignis</span> Intellect
+                        </h1>
 
-                                <p className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
-                                    Founded in Cape Town, we blend fiery innovation with intellectual AI expertise to build transformative digital solutions. We turn complex data into human experiences.
-                                </p>
+                        <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                            Founded in Cape Town, we blend fiery innovation with intellectual AI expertise to build transformative digital solutions. We turn complex data into human experiences.
+                        </p>
 
-                                <div className="flex gap-4">
-                                    <Link
-                                        href="/portfolio"
-                                        className="orange-gradient text-white px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2 hover:shadow-[0_0_30px_-5px_#ff6b00]"
-                                    >
-                                        View Our Work
-                                        <span className="material-symbols-outlined">arrow_forward</span>
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="flex-1 w-full max-w-md">
-                                <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative group">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                                        alt="Modern tech office with clean lines and blue lighting"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCq68g90NuXr5HdpsqD_PFYzPPTKlpq0Yd32rqwPmaULU3mIEPJPJMZ4lLJVC9mmzpVEueGVvTtEC7ZDQjngisVfVVopMLEz_eWx5J3JXExc65XgtupAGIl5uhvEjV0salAclEvwfWRd9HNjR23NGxC7z6ehgzkqXK52vCdX3DtPlhOax8X0WmchXktYbgbSrSfE8AYV3-Dg0_lc_KprmsqLR3zqi7p206M8cjQ7bAaFFPze9OgqocMBisHPZkSZdxc92FaOvrthEM"
-                                    />
-                                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors" />
-                                </div>
-                            </div>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link
+                                href="/portfolio"
+                                className="w-full sm:w-auto px-8 py-4 orange-gradient text-white font-bold rounded-lg transition-all hover:scale-105 glow-orange text-center flex items-center justify-center gap-2"
+                            >
+                                View Our Work
+                                <span className="material-symbols-outlined">arrow_forward</span>
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-lg hover:bg-white/10 transition-all text-center"
+                            >
+                                Contact Us
+                            </Link>
                         </div>
                     </div>
                 </section>
