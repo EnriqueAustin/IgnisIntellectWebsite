@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 export default function Hero() {
     return (
@@ -9,20 +10,13 @@ export default function Hero() {
             {/* Background Graphic */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent z-10" />
-                {/* <img
-                    alt="Abstract AI visualization with fiery energy pulses"
+                <BackgroundVideo
+                    src="/videos/hero-video-background.mp4"
+                    poster="/videos/hero-poster.jpg"
                     className="w-full h-full object-cover opacity-40"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCddICVxHCGMcYPbBhhj0zTaNJg7kcrsB7ftP3gxXSR3EQ1TTsm2QGndMPNb4RAzG7DhZW-0akSeut1T4zwzirx-NeD4CHaIheJFzwjX2mMl2wgmrNlmgWyrVJhlvj_qpUPTSfx-xMcZySxw6yW80v62_4ayzUmg6zX4N_5KpaCtOhKgnnGck30xrTz2is8ry57U82HsUkyPt3bDOMAXOczoSx16x97XKg4tOh08iT6hEBQYyzbOewqE4fT2rS7TiHEGtC-KiYsVBhz"
-                /> */}
-                <video
                     autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover opacity-40"
-                >
-                    <source src="/videos/hero-video-background.mp4" type="video/mp4" />
-                </video>
+                    forceMobile
+                />
                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background-dark to-transparent z-10" />
                 <div className="hero-glow absolute inset-0" />
             </div>
@@ -45,7 +39,7 @@ export default function Hero() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-orange opacity-75" />
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-orange" />
                         </span>
-                        <span className="text-accent-orange text-xs font-bold uppercase tracking-widest">Now Serving Cape Town</span>
+                        <span className="text-accent-orange text-xs font-bold uppercase tracking-widest">Cape Town &amp; West Coast</span>
                     </motion.div>
 
                     <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6">

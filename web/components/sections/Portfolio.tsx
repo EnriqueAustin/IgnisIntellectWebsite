@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Portfolio() {
     const projects = [
@@ -7,7 +8,7 @@ export default function Portfolio() {
             title: "Ignis Lead Gen & Sales Tool",
             image: "/images/Projects/ignisleadgen.png",
             alt: "Ignis Lead Gen & Sales Tool",
-            link: ""
+            link: "/"
         },
         {
             category: "Hospitality • Web",
@@ -46,11 +47,12 @@ export default function Portfolio() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden">
                     {projects.map((project, index) => (
                         <div key={index} className="group relative rounded-xl overflow-hidden aspect-[4/5] bg-primary">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 alt={project.alt}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60"
                                 src={project.image}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent" />
                             <div className="absolute bottom-0 left-0 p-8">
@@ -58,15 +60,25 @@ export default function Portfolio() {
                                     {project.category}
                                 </span>
                                 <h4 className="text-2xl font-bold text-white mb-4">{project.title}</h4>
-                                {project.link ? (
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent-orange transition-colors">
-                                        <span className="material-symbols-outlined">north_east</span>
+                                {project.link?.startsWith("/") ? (
+                                    <Link
+                                        href={project.link}
+                                        aria-label={`View ${project.title}`}
+                                        className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent-orange transition-colors"
+                                    >
+                                        <span className="material-symbols-outlined" aria-hidden="true">north_east</span>
+                                    </Link>
+                                ) : project.link ? (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Visit ${project.title} website`}
+                                        className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent-orange transition-colors"
+                                    >
+                                        <span className="material-symbols-outlined" aria-hidden="true">north_east</span>
                                     </a>
-                                ) : (
-                                    <button className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-accent-orange transition-colors">
-                                        <span className="material-symbols-outlined">north_east</span>
-                                    </button>
-                                )}
+                                ) : null}
                             </div>
                         </div>
                     ))}

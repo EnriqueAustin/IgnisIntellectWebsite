@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { servicesData } from "@/data/servicesData";
 import type { Metadata } from "next";
+import BackgroundVideo from "@/components/ui/BackgroundVideo";
 
 export async function generateStaticParams() {
     return servicesData.map((service) => ({
@@ -19,9 +20,17 @@ export async function generateMetadata({
     const { slug } = await params;
     const service = servicesData.find((s) => s.slug === slug);
     if (!service) return { title: "Service Not Found" };
+    const url = `https://ignisintellect.com/services/${service.slug}`;
     return {
-        title: `${service.title} - Ignis Intellect`,
+        title: `${service.title} in Cape Town & West Coast`,
         description: service.heroDescription,
+        alternates: { canonical: url },
+        openGraph: {
+            title: `${service.title} | Ignis Intellect`,
+            description: service.heroDescription,
+            url,
+            type: "website",
+        },
     };
 }
 
@@ -37,24 +46,65 @@ export default async function ServicePage({
         notFound();
     }
 
+    const SITE_URL = "https://ignisintellect.com";
+    const serviceJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: service.title,
+        description: service.heroDescription,
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: [
+            { "@type": "City", name: "Cape Town" },
+            { "@type": "AdministrativeArea", name: "West Coast" },
+            { "@type": "AdministrativeArea", name: "Western Cape" },
+            { "@type": "Country", name: "South Africa" },
+        ],
+        url: `${SITE_URL}/services/${service.slug}`,
+        offers: service.pricing.map((tier) => ({
+            "@type": "Offer",
+            name: tier.name,
+            description: tier.description,
+            price: tier.price.replace(/[^0-9.]/g, "") || undefined,
+            priceCurrency: "ZAR",
+        })),
+    };
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+            { "@type": "ListItem", position: 3, name: service.title, item: `${SITE_URL}/services/${service.slug}` },
+        ],
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
             <Navbar />
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-primary px-4 pt-20">
-                    <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-                        <div className="absolute top-0 -left-1/4 w-[500px] h-[500px] bg-accent-orange/20 rounded-full blur-[120px]" />
-                        <div className="absolute bottom-0 -right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]" />
-                    </div>
-                    <div className="relative z-10 max-w-4xl text-center">
-                        <div className="flex items-center justify-center gap-3 text-accent-orange mb-6">
-                            <span className="material-symbols-outlined text-5xl">
+                <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4 pt-32">
+                    <BackgroundVideo
+                        src="/videos/background-videos/Mesh.mp4"
+                        poster="/videos/posters/Mesh.jpg"
+                        autoPlay
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-primary/75 z-[1]" />
+                    <div className="relative z-10 max-w-4xl text-center py-20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-orange/10 border border-accent-orange/20 text-accent-orange text-xs font-bold uppercase tracking-widest mb-6">
+                            <span className="material-symbols-outlined text-base">
                                 {service.icon}
                             </span>
-                            <span className="text-sm font-bold tracking-[0.2em] uppercase">
-                                {service.label}
-                            </span>
+                            {service.label}
                         </div>
                         <h1 className="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
                             {service.title}

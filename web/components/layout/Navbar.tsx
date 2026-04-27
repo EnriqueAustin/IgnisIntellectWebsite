@@ -34,13 +34,13 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 navy-glass border-b border-primary/20 dark:border-white/10">
+        <header className="fixed top-0 left-0 right-0 z-50 navy-glass border-b border-white/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 backdrop-blur-xl">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="orange-gradient p-1.5 rounded-lg">
-                            <span className="material-symbols-outlined text-white">local_fire_department</span>
+                            <span className="material-symbols-outlined text-white" aria-hidden="true">local_fire_department</span>
                         </div>
                         <h1 className="text-xl font-bold tracking-tight">
                             <span className="text-accent-orange">Ignis</span>

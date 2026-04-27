@@ -177,7 +177,7 @@
           "description": "Custom AI-powered lead generation and sales tool.",
           "alt": "Ignis Lead Gen & Sales Tool",
           "image": "/images/Projects/ignisleadgen.png",
-          "link": "",
+          "link": "/portfolio",
           "tech": [
             { "name": "AI", "icon": "psychology" },
             { "name": "Automation", "icon": "smart_toy" }
@@ -256,12 +256,11 @@
       ]
     },
     "contact": {
-      "address": "Saldanha / Cape Town, South Africa",
+      "address": "Vredenburg, West Coast & V&A Waterfront, Cape Town",
       "email": "ignisintellect@gmail.com",
-      "phone": "+27 12 345 6789",
+      "phone": "+27 73 859 5637",
       "socials": {
-        "linkedin": "https://linkedin.com/company/ignisintellect",
-        "twitter": "https://x.com/itstonyaustin"
+        "instagram": "https://www.instagram.com/ignisintellect/"
       }
     }
   }
