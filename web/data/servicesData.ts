@@ -2,9 +2,11 @@ export interface PricingTier {
     name: string;
     price: string;
     period?: string;
+    setupFee?: string;
     description: string;
     features: string[];
     highlighted?: boolean;
+    featured?: boolean;
     cta: string;
 }
 
@@ -83,8 +85,31 @@ export const servicesData: ServiceDetail[] = [
         ],
         pricing: [
             {
+                name: "Business Website",
+                price: "R800",
+                period: "/mo",
+                setupFee: "R2,500 setup fee",
+                description: "A complete, professionally built website with ongoing hosting, maintenance, and updates — so you can focus on running your business.",
+                features: [
+                    "Up to 8 custom pages",
+                    "2 rounds of revisions",
+                    "Hosting & maintenance included",
+                    "Email hosting included",
+                    "SEO setup (meta tags, OpenGraph, sitemaps)",
+                    "WhatsApp chat button",
+                    "Contact form integration",
+                    "Booking platform integration",
+                    "Ongoing changes & updates",
+                    "Mobile-responsive design",
+                    "SSL certificate",
+                ],
+                featured: true,
+                highlighted: true,
+                cta: "Get Started",
+            },
+            {
                 name: "Starter",
-                price: "R9,999",
+                price: "R4,500",
                 description: "Perfect for startups & freelancers needing a professional online presence.",
                 features: [
                     "Landing page (1–3 pages)",
@@ -112,8 +137,7 @@ export const servicesData: ServiceDetail[] = [
                     "3 rounds of revisions",
                     "14-day delivery",
                 ],
-                highlighted: true,
-                cta: "Most Popular",
+                cta: "Get Started",
             },
             {
                 name: "Enterprise",

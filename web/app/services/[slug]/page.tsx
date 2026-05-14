@@ -176,35 +176,44 @@ export default async function ServicePage({
                                 fits your needs — upgrade anytime.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {service.pricing.map((tier, index) => (
-                                <div
-                                    key={index}
-                                    className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-2 ${tier.highlighted
-                                            ? "bg-gradient-to-b from-accent-orange/10 to-transparent border-accent-orange/40 shadow-[0_0_40px_rgba(255,107,0,0.1)]"
-                                            : "bg-white/[0.03] border-white/10 hover:border-white/20"
-                                        }`}
-                                >
-                                    {tier.highlighted && (
-                                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 orange-gradient rounded-full text-white text-xs font-bold tracking-wider uppercase">
-                                            Most Popular
+                        {service.pricing.filter((t) => t.featured).map((tier, index) => (
+                            <div
+                                key={`featured-${index}`}
+                                className="relative mb-12 rounded-2xl border border-accent-orange/40 bg-gradient-to-br from-accent-orange/10 via-transparent to-accent-orange/5 shadow-[0_0_60px_rgba(255,107,0,0.08)] overflow-hidden"
+                            >
+                                <div className="absolute top-0 left-0 w-full h-1 orange-gradient" />
+                                <div className="absolute -top-0 right-6 px-4 py-1.5 orange-gradient rounded-b-lg text-white text-xs font-bold tracking-wider uppercase">
+                                    Best Value
+                                </div>
+                                <div className="p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                                    <div>
+                                        <h3 className="text-white text-2xl md:text-3xl font-black mb-3">
+                                            {tier.name}
+                                        </h3>
+                                        <div className="flex items-baseline gap-2 mb-2">
+                                            <span className="text-white text-5xl md:text-6xl font-black">
+                                                {tier.price}
+                                            </span>
+                                            {tier.period && (
+                                                <span className="text-white/50 text-xl">{tier.period}</span>
+                                            )}
                                         </div>
-                                    )}
-                                    <h3 className="text-white text-xl font-bold mb-2">
-                                        {tier.name}
-                                    </h3>
-                                    <div className="mb-4">
-                                        <span className="text-white text-5xl font-black">
-                                            {tier.price}
-                                        </span>
-                                        {tier.period && (
-                                            <span className="text-white/50 text-lg">{tier.period}</span>
+                                        {tier.setupFee && (
+                                            <p className="text-accent-orange font-semibold text-sm mb-4">
+                                                + {tier.setupFee}
+                                            </p>
                                         )}
+                                        <p className="text-white/60 leading-relaxed mb-8 max-w-lg">
+                                            {tier.description}
+                                        </p>
+                                        <Link
+                                            href="/contact"
+                                            className="inline-block px-8 py-4 orange-gradient text-white font-bold rounded-xl transition-all hover:scale-105 glow-orange"
+                                        >
+                                            {tier.cta}
+                                        </Link>
                                     </div>
-                                    <p className="text-white/50 text-sm mb-8 leading-relaxed">
-                                        {tier.description}
-                                    </p>
-                                    <ul className="space-y-4 mb-10 flex-grow">
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         {tier.features.map((feature, i) => (
                                             <li
                                                 key={i}
@@ -217,18 +226,70 @@ export default async function ServicePage({
                                             </li>
                                         ))}
                                     </ul>
-                                    <Link
-                                        href="/contact"
-                                        className={`block text-center py-4 rounded-xl font-bold transition-all hover:scale-105 ${tier.highlighted
-                                                ? "orange-gradient text-white glow-orange"
-                                                : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                                            }`}
-                                    >
-                                        {tier.cta}
-                                    </Link>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
+
+                        {service.pricing.filter((t) => !t.featured).length > 0 && (
+                            <>
+                                <p className="text-center text-white/40 text-sm uppercase tracking-widest mb-8">
+                                    Or choose a one-time build
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    {service.pricing.filter((t) => !t.featured).map((tier, index) => (
+                                        <div
+                                            key={index}
+                                            className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-2 ${tier.highlighted
+                                                    ? "bg-gradient-to-b from-accent-orange/10 to-transparent border-accent-orange/40 shadow-[0_0_40px_rgba(255,107,0,0.1)]"
+                                                    : "bg-white/[0.03] border-white/10 hover:border-white/20"
+                                                }`}
+                                        >
+                                            {tier.highlighted && (
+                                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 orange-gradient rounded-full text-white text-xs font-bold tracking-wider uppercase">
+                                                    Most Popular
+                                                </div>
+                                            )}
+                                            <h3 className="text-white text-xl font-bold mb-2">
+                                                {tier.name}
+                                            </h3>
+                                            <div className="mb-4">
+                                                <span className="text-white text-5xl font-black">
+                                                    {tier.price}
+                                                </span>
+                                                {tier.period && (
+                                                    <span className="text-white/50 text-lg">{tier.period}</span>
+                                                )}
+                                            </div>
+                                            <p className="text-white/50 text-sm mb-8 leading-relaxed">
+                                                {tier.description}
+                                            </p>
+                                            <ul className="space-y-4 mb-10 flex-grow">
+                                                {tier.features.map((feature, i) => (
+                                                    <li
+                                                        key={i}
+                                                        className="flex items-start gap-3 text-white/80 text-sm"
+                                                    >
+                                                        <span className="material-symbols-outlined text-accent-orange text-lg mt-0.5 shrink-0">
+                                                            check_circle
+                                                        </span>
+                                                        {feature}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <Link
+                                                href="/contact"
+                                                className={`block text-center py-4 rounded-xl font-bold transition-all hover:scale-105 ${tier.highlighted
+                                                        ? "orange-gradient text-white glow-orange"
+                                                        : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
+                                                    }`}
+                                            >
+                                                {tier.cta}
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        )}
                         <p className="text-center text-white/40 text-sm mt-10">
                             {/* All prices include VAT.*/}Custom packages available on request.{" "} 
                             <Link href="/contact" className="text-accent-orange hover:underline">
