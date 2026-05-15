@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next *)",
+      "Bash(ffmpeg -version)",
+      "Bash(where ffmpeg.exe)",
+      "Bash(powershell -c \"Get-Command ffmpeg -ErrorAction SilentlyContinue\")",
+      "Bash(winget --version)",
+      "Read(//c/Program Files/**)",
+      "Read(//c//**)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\(require\\('ffmpeg-static'\\)\\)\")",
+      "Bash(../node_modules/ffmpeg-static/ffmpeg.exe -ss 2 -i public/videos/hero-video-background.mp4 -frames:v 1 -q:v 2 public/videos/hero-poster.jpg -y)",
+      "Bash(/c/Users/anton/Documents/Development/antiGravityDev/IgnisIntellectWebsite/node_modules/ffmpeg-static/ffmpeg.exe -ss 2 -i public/videos/hero-video-background.mp4 -frames:v 1 -q:v 2 public/videos/hero-poster.jpg -y)",
+      "Bash(/c/Users/anton/Documents/Development/antiGravityDev/IgnisIntellectWebsite/node_modules/ffmpeg-static/ffmpeg.exe -ss 2 -i web/public/videos/hero-video-background.mp4 -frames:v 1 -q:v 2 web/public/videos/hero-poster.jpg -y)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

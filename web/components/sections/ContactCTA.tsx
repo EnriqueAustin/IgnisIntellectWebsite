@@ -78,7 +78,7 @@ export default function ContactCTA() {
                             </div>
                             <div className="flex items-center gap-4 text-slate-300">
                                 <span className="material-symbols-outlined text-accent-orange">location_on</span>
-                                V&amp;A Waterfront, Cape Town, South Africa
+                                Paarl, Cape Winelands, South Africa
                             </div>
                         </div>
                     </div>

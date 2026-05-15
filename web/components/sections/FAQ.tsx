@@ -14,7 +14,7 @@ const FAQS = [
     },
     {
         q: "Do you only work with Cape Town & West Coast clients?",
-        a: "We're based in Vredenburg and at the V&A Waterfront, but we work remotely with clients across South Africa and abroad. In-person meetings are a bonus, not a requirement.",
+        a: "We're based in Vredenburg and in Paarl, but we work remotely with clients across South Africa and abroad. In-person meetings are a bonus, not a requirement.",
     },
     {
         q: "How much does a project cost?",
