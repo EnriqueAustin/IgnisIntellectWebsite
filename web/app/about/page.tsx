@@ -9,6 +9,13 @@ export const metadata: Metadata = {
     title: "About Us — Cape Town & West Coast Web & AI Agency",
     description:
         "Founded in Saldanha and serving Cape Town and the West Coast, Ignis Intellect blends fiery innovation with AI expertise to build transformative web and AI solutions for South African businesses.",
+    keywords: [
+        "about Ignis Intellect",
+        "AI agency South Africa",
+        "web development team Cape Town",
+        "tech agency West Coast",
+        "AI consulting Western Cape",
+    ],
     alternates: { canonical: "https://ignisintellect.com/about" },
     openGraph: {
         title: "About Ignis Intellect — Cape Town & West Coast",
@@ -16,6 +23,7 @@ export const metadata: Metadata = {
             "Meet the team behind Ignis Intellect: a Cape Town & West Coast web development and AI agency helping South African businesses scale with intelligent technology.",
         url: "https://ignisintellect.com/about",
         type: "website",
+        images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "About Ignis Intellect" }],
     },
 };
 
@@ -308,7 +316,7 @@ export default function About() {
                                         </div>
                                         <div>
                                             <h5 className="text-white font-bold">Innovation Hub</h5>
-                                            <p className="text-slate-400 text-sm">V&amp;A Waterfront &amp; Saldanha District, South Africa</p>
+                                            <p className="text-slate-400 text-sm">Paarl &amp; Saldanha District, South Africa</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">

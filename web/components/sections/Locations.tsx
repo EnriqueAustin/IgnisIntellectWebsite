@@ -7,8 +7,8 @@ const LOCATIONS = [
         icon: "factory",
     },
     {
-        name: "V&A Waterfront — Cape Town",
-        description: "Innovation Hub, Western Cape",
+        name: "Paarl — Cape Winelands",
+        description: "Cape Winelands, Western Cape",
         icon: "location_city",
     },
 ];

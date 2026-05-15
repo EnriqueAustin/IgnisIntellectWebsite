@@ -96,7 +96,7 @@ export default function Contact() {
                             </span>
                         </h1>
                         <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                            Ready to transform your digital presence with AI-driven web solutions? Our team is based in Vredenburg on the West Coast and at the V&amp;A Waterfront in Cape Town, ready to bring your vision to life.
+                            Ready to transform your digital presence with AI-driven web solutions? Our team is based in Vredenburg on the West Coast and in Paarl in the Cape Winelands, ready to bring your vision to life.
                         </p>
                     </div>
                 </section>
@@ -123,7 +123,7 @@ export default function Contact() {
                                         <h4 className="text-lg font-bold text-white mb-1">Our Locations</h4>
                                         <p className="text-slate-400 leading-relaxed">
                                             Vredenburg, West Coast<br />
-                                            V&A Waterfront, Cape Town<br />
+                                            Paarl, Cape Winelands<br />
                                             Western Cape, South Africa
                                         </p>
                                     </div>
@@ -293,10 +293,10 @@ export default function Contact() {
                                 <span className="material-symbols-outlined text-accent-orange text-sm">rocket_launch</span>
                                 Ignis HQ
                             </h5>
-                            <p className="text-sm text-slate-300">Visit us at the heart of the Waterfront innovation hub.</p>
+                            <p className="text-sm text-slate-300">Visit us in the heart of the Cape Winelands.</p>
                             <div className="mt-4 pt-4 border-t border-white/10">
                                 <a
-                                    href="https://www.google.com/maps/search/?api=1&query=V%26A+Waterfront+Cape+Town"
+                                    href="https://www.google.com/maps/search/?api=1&query=Paarl+Western+Cape"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-accent-orange text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: "Services — Web Development & AI Automation",
     description:
         "Custom web development, AI automation, design, audits, and consulting from Ignis Intellect — a Cape Town & West Coast agency building high-performance digital products that scale.",
+    keywords: [
+        "web development services Cape Town",
+        "AI automation services South Africa",
+        "e-commerce development",
+        "AI chatbot development",
+        "web design West Coast",
+        "digital consulting Western Cape",
+    ],
     alternates: { canonical: "https://ignisintellect.com/services" },
     openGraph: {
         title: "Services — Ignis Intellect",
@@ -16,6 +24,7 @@ export const metadata: Metadata = {
             "Web development, AI automation, design & creative, consulting, audits, and ongoing support — tailored to your business.",
         url: "https://ignisintellect.com/services",
         type: "website",
+        images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Ignis Intellect Services" }],
     },
 };
 

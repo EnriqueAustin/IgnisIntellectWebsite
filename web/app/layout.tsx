@@ -121,11 +121,11 @@ const jsonLd = {
         },
         {
           "@type": "Place",
-          name: "Ignis Intellect — V&A Waterfront",
+          name: "Ignis Intellect — Paarl",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "V&A Waterfront",
-            addressLocality: "Cape Town",
+            streetAddress: "Paarl",
+            addressLocality: "Paarl",
             addressRegion: "Western Cape",
             addressCountry: "ZA",
           },

@@ -12,10 +12,10 @@ const LOCATIONS = [
         lng: 17.9925,
     },
     {
-        name: "V&A Waterfront",
-        description: "Cape Town, Western Cape",
-        lat: -33.9036,
-        lng: 18.4208,
+        name: "Paarl",
+        description: "Paarl, Western Cape",
+        lat: -33.7342,
+        lng: 18.9626,
     },
 ];
 

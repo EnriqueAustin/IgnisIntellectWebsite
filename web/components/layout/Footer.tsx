@@ -63,12 +63,12 @@ export default function Footer() {
                             </h2>
                         </Link>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                            Leading the charge in AI-driven digital transformation from Vredenburg on the West Coast and the V&amp;A Waterfront, Cape Town.
+                            Leading the charge in AI-driven digital transformation from Vredenburg on the West Coast and Paarl in the Cape Winelands.
                         </p>
                         <address className="not-italic text-slate-400 text-sm leading-relaxed space-y-1">
                             <div className="flex items-start gap-2">
                                 <span className="material-symbols-outlined text-accent-orange text-base mt-0.5">location_on</span>
-                                <span>Vredenburg, West Coast<br />V&amp;A Waterfront, Cape Town</span>
+                                <span>Vredenburg, West Coast<br />Paarl, Cape Winelands</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="material-symbols-outlined text-accent-orange text-base">call</span>
