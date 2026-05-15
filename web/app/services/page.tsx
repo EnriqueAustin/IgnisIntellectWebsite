@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     description:
         "Custom web development, AI automation, design, audits, and consulting from Ignis Intellect — a Cape Town & West Coast agency building high-performance digital products that scale.",
     keywords: [
+        "business workflow automation in cape town",
+        "ai search visibility audit service cape town",
+        "chatgpt visibility optimisation service in cape town",
+        "web to AI transformation Cape Town",
         "web development services Cape Town",
         "AI automation services South Africa",
         "e-commerce development",

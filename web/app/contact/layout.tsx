@@ -6,6 +6,9 @@ export const metadata: Metadata = {
         "Get in touch with Ignis Intellect, serving Cape Town, Saldanha, Langebaan and the wider West Coast. Book a free consultation for web development or AI automation.",
     keywords: [
         "contact Ignis Intellect",
+        "business workflow automation in cape town",
+        "ai search visibility audit service cape town",
+        "chatgpt visibility optimisation service in cape town",
         "web developer contact Cape Town",
         "AI agency West Coast contact",
         "free consultation web development",

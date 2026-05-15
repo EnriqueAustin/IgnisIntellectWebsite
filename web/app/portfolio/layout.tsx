@@ -5,6 +5,8 @@ export const metadata: Metadata = {
     description:
         "Explore Ignis Intellect's portfolio of AI-powered web applications, e-commerce platforms, and custom software built for businesses across Cape Town, the West Coast, and South Africa.",
     keywords: [
+        "business workflow automation in cape town",
+        "web to AI transformation Cape Town",
         "web development portfolio South Africa",
         "AI projects Cape Town",
         "e-commerce portfolio West Coast",

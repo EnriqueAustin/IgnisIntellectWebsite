@@ -11,6 +11,10 @@ export const metadata: Metadata = {
         "Founded in Saldanha and serving Cape Town and the West Coast, Ignis Intellect blends fiery innovation with AI expertise to build transformative web and AI solutions for South African businesses.",
     keywords: [
         "about Ignis Intellect",
+        "business workflow automation in cape town",
+        "ai search visibility audit service cape town",
+        "chatgpt visibility optimisation service in cape town",
+        "web to AI transformation Cape Town",
         "AI agency South Africa",
         "web development team Cape Town",
         "tech agency West Coast",
